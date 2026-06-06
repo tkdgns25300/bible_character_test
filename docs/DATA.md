@@ -23,7 +23,7 @@ export interface Question {
   id: string            // kebab, 예: 'q-01'
   dimension: Dimension
   text: string          // 영어 진술문
-  options: QuestionOption[]   // 보통 2개(동의/비동의) 또는 리커트
+  options: QuestionOption[]   // MVP는 동의/비동의 2개(이진). 강도가 필요하면 weight 추가
 }
 
 export interface Verse {
@@ -55,9 +55,11 @@ export interface BibleType {
 }
 ```
 
+> **불변식**: 옵션 `pole`은 그 질문의 `dimension`에 속하는 극이어야 한다 (스캐폴딩 시 타입/빌드로 강제).
+
 ## 채점 규칙 (`lib/scoring.ts` 단일 정의)
 
-- 응답을 축별(EI·SN·TF·JP)로 집계 → 우세 극 4개 → `TypeCode` → `id`로 `BibleType` 조회
+- 응답을 축별(EI·SN·TF·JP)로 집계 → 우세 극 4개 = `TypeCode` → `code`가 일치하는 `BibleType`를 찾아 그 `id`로 `/types/[type]` 라우팅
 - **동점 방지**: 축당 문항 수를 **홀수**로 설계(권장), 또는 명시적 tie-break(예: I·N·F·P 우선) — 규칙을 코드 주석과 이 문서에 동시 명시
 - 순수·결정적 함수. 같은 응답 → 같은 결과. 외부 I/O·랜덤 없음
 
@@ -70,7 +72,7 @@ src/data/
     ├── {type-id}.ts         export const david: BibleType = { ... }
     └── index.ts             export const TYPES: BibleType[]   (16개 취합, 로직 X)
 
-public/images/types/{type-id}.*   유형 대표/공유 이미지 (직접 제작·라이선스분만)
+public/images/types/{type-id}.*   유형 대표(히어로) 이미지 — 선택. 공유 OG 카드는 opengraph-image.tsx가 생성 (직접 제작·라이선스분만)
 ```
 
 - id·파일명·이미지명·라우트는 모두 **영어 kebab-case로 일치** (한글 금지 — URL 인코딩 방지)
@@ -86,7 +88,7 @@ public/images/types/{type-id}.*   유형 대표/공유 이미지 (직접 제작�
 
 ## 성경 구절 · 저작권
 
-- **MVP는 퍼블릭도메인 번역본만 인용** (예: WEB · KJV · ASV). NIV · ESV 등은 유료/허가 필요 → 라이선스 전까지 사용 금지
+- **MVP는 퍼블릭도메인 번역본만 인용.** **WEB을 기본**으로 (전 세계 PD·현대 영어). ASV도 PD. KJV는 미국 PD지만 **영국은 Crown copyright**라 영어권(UK 포함) 노출 시 주의. NIV · ESV 등 유료/허가 번역본은 라이선스 전까지 사용 금지
 - 각 `Verse.translation`에 번역본을 명시. 재호스팅이 아니라 출처 표기 인용
 
 ## 16유형 매핑 (미정 — 사용자 + 검수)

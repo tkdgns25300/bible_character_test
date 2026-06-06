@@ -32,7 +32,7 @@
 
 ### 3. 유형 페이지 (`/types/[type]`) — 결과 = 브라우즈 (16개 정적)
 하나의 정식 URL이 결과 페이지이자 SEO 랜딩. 테스트로 도착하면 상단에 "Your result" 배너(클라이언트).
-- **헤더**: 인물명 + 유형 타이틀 + 공유 최적화 카드 이미지
+- **헤더**: 인물명 + 유형 타이틀 + 대표 비주얼 (공유 OG 카드는 `opengraph-image.tsx`가 생성)
 - **본문 블록**: Strengths · Weaknesses · Spiritual Calling · Recommended Verses
 - 📧 이메일 입력 → 상세 받기 (핵심 자산)
 - 📚 Amazon 추천 도서 / 👕 POD 굿즈 / ☕ Buy Me a Coffee
@@ -46,7 +46,7 @@
 - 서비스 목적·운영 주체 · **신학 검수 방침**(신뢰) · 문의 mailto · 후원 버튼
 
 ### 6. Privacy (`/privacy`)
-- 이메일 수집 · 광고(Phase 2) · 애널리틱스 쿠키 고지. 영어권 대상이라 GDPR 친화 표현 권장
+- 이메일 수집 · 광고(Phase 2) · 애널리틱스 쿠키 고지. 쿠키 동의가 필요한 이유는 광고·애널리틱스 — 지역별 규정(GDPR/UK-GDPR/CCPA) 고려
 
 ## 수익 배치 원칙 (공유를 죽이지 않는 선)
 
@@ -61,7 +61,7 @@
 
 - `generateMetadata` 전 페이지 (title·description·OG·Twitter)
 - `app/sitemap.ts` · `app/robots.ts`, `<html lang="en">`, 정식 URL은 `NEXT_PUBLIC_SITE_URL`
-- JSON-LD: 유형 = `Article`/`CreativeWork`, 랜딩 = `WebSite`
+- JSON-LD: 유형 = `Article`/`CreativeWork` (성격결과 전용 스키마 없어 잠정), 랜딩 = `WebSite`
 - 분석: Plausible 또는 GA4 + Search Console 등록
 
 ## 네이밍 · 법적 주의

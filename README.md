@@ -6,7 +6,7 @@
 
 Next.js (App Router, SSG) · React · TypeScript strict · Tailwind + shadcn/ui · Vercel · npm
 
-> **DB 없음.** 질문·16유형 콘텐츠는 `src/data/**`의 TypeScript 파일. 이메일 수집만 외부 서비스(ConvertKit/Resend). 데이터 모델·채점은 [`docs/DATA.md`](./docs/DATA.md).
+> **DB 없음.** 질문·16유형 콘텐츠는 `src/data/**`의 TypeScript 파일. 이메일은 외부 서비스 — 수집·리스트는 ConvertKit/Beehiiv, 발송은 Resend. 데이터 모델·채점은 [`docs/DATA.md`](./docs/DATA.md).
 
 ## Pages
 
@@ -62,7 +62,7 @@ Buy Me a Coffee·POD 스토어 링크는 비밀이 아니므로 `src/constants/`
 | GitHub repo | `tkdgns25300/bible_character_test` (생성됨, 커밋 0 · default `main`) |
 | Vercel | **미연결** (production = `main`) |
 | DB / Auth | 없음 (파일 기반 정적 사이트) |
-| 이메일 | ConvertKit / Resend (미연동) |
+| 이메일 | 수집 ConvertKit/Beehiiv · 발송 Resend (미연동) |
 
 ## Git
 

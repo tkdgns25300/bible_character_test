@@ -50,7 +50,7 @@
 - [ ] `/about` · `/privacy`
 
 ### 1-4. 수익·런칭 (출시 Day 0)
-- [ ] 이메일 수집 폼 + ConvertKit/Resend
+- [ ] 이메일 수집 폼 + ConvertKit/Beehiiv (발송은 Resend)
 - [ ] 공유 버튼 + 유형별 동적 OG 이미지
 - [ ] Amazon 링크 · POD 링크 · Buy Me a Coffee
 - [ ] sitemap·robots · 분석(Plausible/GA4) · Search Console

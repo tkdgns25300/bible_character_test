@@ -10,6 +10,8 @@
 
 **Stack**: Next.js (App Router, SSG) · React · TypeScript strict · Tailwind + shadcn/ui · Vercel · npm
 
+> 버전은 스캐폴딩 시 확정. 공통 인프라 재사용 시 worshipers와 정렬 (Next.js 16 · React 19 · Tailwind v4).
+
 ## Architecture Overview
 
 ### 핵심 결정: DB 없는 파일 기반 정적 사이트
@@ -17,7 +19,7 @@
 질문·16유형 콘텐츠는 외부 데이터소스가 아니라 **`src/data/**`의 TypeScript 모듈**이다. 빌드 시 번들에 포함되어 페이지가 완전히 정적 생성된다.
 
 - **DB·Auth·서버 mutation 없음.** 콘텐츠는 코드다. 갱신 = 파일 편집 → push → 자동 재배포.
-- **이메일 수집만** 외부 서비스(ConvertKit/Resend)로 전송 — 자체 DB 불필요. (PROJECT.md의 "Supabase/SQLite"는 MVP에선 쓰지 않는다.)
+- **이메일만** 외부 서비스에 위임 — 수집·리스트는 ConvertKit/Beehiiv, 발송은 Resend. 자체 DB 불필요. (PROJECT.md의 "Supabase/SQLite"는 MVP에선 쓰지 않는다.)
 
 ### 채점 — 유일한 동적 로직
 
@@ -30,7 +32,7 @@
 검색 유입과 결과 공유가 트래픽의 핵심. 모든 페이지는:
 
 - `generateMetadata`로 title·description·Open Graph 설정
-- 16 유형 페이지 = `generateStaticParams` 전수 prerender + JSON-LD(`Article`/`CreativeWork`) + **유형별 동적 OG 이미지**(`opengraph-image.tsx`) — 인스타·트위터 공유 카드
+- 16 유형 페이지 = `generateStaticParams` 전수 prerender + JSON-LD(`Article`/`CreativeWork` — 성격결과 전용 스키마 없어 잠정) + **유형별 동적 OG 이미지**(`opengraph-image.tsx`) — 인스타·트위터 공유 카드
 - `app/sitemap.ts`·`app/robots.ts`로 sitemap·robots 생성, `<html lang="en">`
 
 ## Directory
@@ -66,7 +68,7 @@ src/
 ├── constants/                  DIMENSIONS·후원/POD 링크 등 도메인 상수
 └── types/domain.ts             Question·BibleType·Dimension 타입 (DATA.md와 일치)
 
-public/images/types/{type-id}.*   유형 대표/공유 이미지 (직접 제작·라이선스분만)
+public/images/types/{type-id}.*   유형 대표(히어로) 이미지 — 선택. 공유 OG 카드는 opengraph-image.tsx가 생성 (직접 제작·라이선스분만)
 ```
 
 ## Layer Responsibilities
