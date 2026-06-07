@@ -25,6 +25,7 @@ Next.js (App Router, SSG) · React · TypeScript strict · Tailwind + shadcn/ui 
 3. [`docs/DATA.md`](./docs/DATA.md) — **DATA**. 질문·16유형 타입·채점·신학 검수
 4. [`docs/ROADMAP.md`](./docs/ROADMAP.md) — **TODO + 현재 상태**
 5. [`docs/DESIGN_BRIEF.md`](./docs/DESIGN_BRIEF.md) — **DESIGN**. 비주얼·브랜드 방향 + claude design 프롬프트
+6. [`docs/SNAPSHOT.md`](./docs/SNAPSHOT.md) — **현재 상태**. 시점 핸드오프 (재개 시 첫 참조)
 
 > 상위 사업 전략(시장·수익 단계·리스크)은 `~/Desktop/bible-personality-test-PROJECT.md`.
 

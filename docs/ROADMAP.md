@@ -20,7 +20,7 @@
 - [x] → **"가자"** (경쟁력 있음)
 
 ### 셋업
-- [x] 문서 (CLAUDE / README / docs{SPEC,DATA,ROADMAP,DESIGN_BRIEF})
+- [x] 문서 (CLAUDE / README / docs{SPEC,DATA,ROADMAP,DESIGN_BRIEF,SNAPSHOT})
 - [x] `dev` 브랜치 생성
 - [x] GitHub repo 생성 (default `main`)
 - [ ] 디자인 시스템 + 핵심 화면 3 — claude design (`docs/DESIGN_BRIEF.md` 기반)
