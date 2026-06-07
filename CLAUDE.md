@@ -1,8 +1,8 @@
 # CLAUDE.md — Bible Character Test
 
-> **이 파일은 HOW** — 아키텍처·코드 컨벤션·Git 워크플로. 페이지·기능은 [`docs/SPEC.md`](./docs/SPEC.md), 데이터·채점·검수는 [`docs/DATA.md`](./docs/DATA.md), 작업 순서·현재 상태는 [`docs/ROADMAP.md`](./docs/ROADMAP.md), 환경·셋업은 [`README.md`](./README.md). 상위 사업 전략은 `~/Desktop/bible-personality-test-PROJECT.md`.
+> **이 파일은 HOW** — 아키텍처·코드 컨벤션·Git 워크플로. 페이지·기능은 [`docs/SPEC.md`](./docs/SPEC.md), 데이터·채점·검수는 [`docs/DATA.md`](./docs/DATA.md), 작업 순서·현재 상태는 [`docs/ROADMAP.md`](./docs/ROADMAP.md), 비주얼·브랜드는 [`docs/DESIGN_BRIEF.md`](./docs/DESIGN_BRIEF.md), 환경·셋업은 [`README.md`](./README.md). 상위 사업 전략은 `~/Desktop/bible-personality-test-PROJECT.md`.
 >
-> **문서 책임 분리** — 같은 사실을 두 곳에 쓰지 않는다. 아키텍처·컨벤션은 여기, 페이지 명세는 SPEC, 데이터·채점은 DATA, 작업은 ROADMAP, 환경은 README.
+> **문서 책임 분리** — 같은 사실을 두 곳에 쓰지 않는다. 아키텍처·컨벤션은 여기, 페이지 명세는 SPEC, 데이터·채점은 DATA, 작업은 ROADMAP, 비주얼·브랜드는 DESIGN_BRIEF, 환경은 README.
 
 ## Project
 

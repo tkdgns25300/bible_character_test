@@ -3,28 +3,31 @@
 > 페이지는 [`SPEC.md`](./SPEC.md), 데이터·채점은 [`DATA.md`](./DATA.md), 환경은 [`../README.md`](../README.md). 상위 사업 전략·수익 단계·리스크는 `~/Desktop/bible-personality-test-PROJECT.md`.
 > 브랜치: `main`(배포·default) / `dev`(작업). commit·push·merge는 사용자 명시 시에만. merge 커밋 X (fast-forward).
 
-## 현재 상태 (2026-06-04)
+## 현재 상태 (2026-06-07)
 
 - ✅ 컨셉·수익 전략·결과 구조 결정 (PROJECT.md)
-- 🚧 **기본 셋업 — 문서 작성 중**
-- ⏳ Phase 0 검증 미완 / 도메인 미구입 / 16유형 매핑 미작성 / 코드 0
-- **다음**: Phase 0 검증 → 통과 시 빌드
+- ✅ 기본 문서·브랜치 셋업 완료 (CLAUDE/README/docs · dev·main)
+- ✅ **Phase 0 검증 통과 — "가자"** (경쟁력 확인)
+- ⏳ 도메인 미구입 / 16유형 매핑 미작성 / 디자인·코드 0
+- **다음**: 디자인(claude design) + 16유형 매핑(아버지 검수) **병행** → 스캐폴딩 → Phase 1
 
 ## Phase 0 — 검증 + 셋업 (빌드 전)
 
-### 검증 (PROJECT.md §5 — 빌드 전 필수)
-- [ ] 영어권 경쟁자 10개 분석 (UX·깊이·수익화)
-- [ ] "bible character test" 류 키워드 검색량·난이도
-- [ ] Pinterest·Reddit 바이럴 패턴 확인
-- [ ] → "가자/안가자" 결정
+### 검증 (PROJECT.md §5 — 빌드 전 필수) — ✅ 통과
+- [x] 영어권 경쟁자 분석 (UX·깊이·수익화)
+- [x] "bible character test" 류 키워드 수요·난이도
+- [x] Pinterest·Reddit 바이럴 패턴 확인
+- [x] → **"가자"** (경쟁력 있음)
 
 ### 셋업
-- [x] 문서 (CLAUDE / README / docs{SPEC,DATA,ROADMAP})
-- [ ] `dev` 브랜치 생성
-- [ ] 도메인 확정·구매 + Vercel 연결
+- [x] 문서 (CLAUDE / README / docs{SPEC,DATA,ROADMAP,DESIGN_BRIEF})
+- [x] `dev` 브랜치 생성
+- [x] GitHub repo 생성 (default `main`)
+- [ ] 디자인 시스템 + 핵심 화면 3 — claude design (`docs/DESIGN_BRIEF.md` 기반)
+- [ ] 도메인 확정·구매
 - [ ] Next.js + React + Tailwind + TypeScript strict 스캐폴딩
 - [ ] shadcn/ui + `.gitignore`·`.env.example`·`next.config`·`tsconfig`
-- [ ] GitHub repo 생성(default `main`) + Vercel 연결(production `main`)
+- [ ] Vercel 연결 (production `main`)
 
 ## Phase 1 — MVP 빌드 (1~2주)
 
