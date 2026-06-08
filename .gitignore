@@ -1,0 +1,15 @@
+# Design exports — heavy/throwaway (archived in Downloads zip)
+design/*.html
+
+# Dependencies / build (future Next.js scaffold)
+node_modules/
+.next/
+out/
+build/
+
+# Env & local
+.env
+.env*.local
+
+# OS
+.DS_Store

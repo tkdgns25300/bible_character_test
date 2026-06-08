@@ -1,0 +1,58 @@
+/* design/tokens.css — Bible Character Test design tokens (single source of truth)
+ *
+ * Owner of every design VALUE. At scaffold this file moves into / is @imported by
+ * src/app/globals.css — do NOT copy these values elsewhere (drift).
+ * Source: claude design export (theme.jsx palettes + index rootVars).
+ * Full export (jsx · screenshots · standalone) archived in the Downloads zip — not committed.
+ *
+ * Active palette: indigo-gold. Two alternatives kept (commented) below.
+ * Per-type accent colors are DATA (src/data/types), NOT tokens.
+ * Behavior/pages: docs/SPEC.md · brand intent: docs/DESIGN_BRIEF.md
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap");
+
+@theme {
+  /* ── Brand colors — indigo-gold (active) ───────────────── */
+  --color-bg: #faf8f3;
+  --color-surface: #ffffff;
+  --color-surface-2: #f4f1ea;
+  --color-ink: #1c1733;
+  --color-ink-soft: #534d6b;
+  --color-ink-faint: #8b8499;
+  --color-primary: #4f46e5;
+  --color-primary-700: #4338ca;
+  --color-primary-50: #eef2ff;
+  --color-gold: #bd8f33;
+  --color-gold-soft: #f4e9cb;
+  --color-gold-ink: #7a5a14;
+  --color-line: #ebe6da;
+  --color-line-strong: #ddd6c6;
+
+  /* ── Type ──────────────────────────────────────────────── */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Spectral", Georgia, "Times New Roman", serif;
+
+  /* ── Radius ────────────────────────────────────────────── */
+  --radius-btn: 10px;
+  --radius-card: 16px;
+
+  /* ── Shadow ────────────────────────────────────────────── */
+  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.06);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.10), 0 8px 10px -6px rgb(0 0 0 / 0.06);
+}
+
+/* Layout: container max 1080px, padding 20px (mobile) / 32px (≥768px).
+ * Headings use clamp() (e.g. hero 40→76px); Tailwind's default text-* scale otherwise.
+ *
+ * ── Alternative palettes (reference — swap the values into @theme to use) ──
+ * midnight-brass — scholarly, parchment ground:
+ *   bg #f6f2e9 · surface #fffdf8 · surface-2 #efe9da · ink #16233a · ink-soft #475068
+ *   ink-faint #8a8da0 · primary #1f3a5c · primary-700 #15293f · primary-50 #e8eef5
+ *   gold #a97f47 · gold-soft #ecdcbd · gold-ink #6f5025 · line #e6ddca · line-strong #d8ccb2
+ * plum-amber — modern devotional, warm aubergine:
+ *   bg #fbf6f3 · surface #ffffff · surface-2 #f5ede9 · ink #2c1a28 · ink-soft #5c4555
+ *   ink-faint #9a8791 · primary #6b2d54 · primary-700 #4f2040 · primary-50 #f6ebf1
+ *   gold #cf9445 · gold-soft #f5e2c4 · gold-ink #8a5a1a · line #ece0da · line-strong #e0d0c8
+ */
