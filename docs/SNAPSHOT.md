@@ -4,66 +4,41 @@
 
 ## 시점
 
-- 작성: 2026-06-07
-- 브랜치: `main`·`dev` origin 동기화 (push 완료)
-- 단계: **Phase 0 검증 통과("가자"). 셋업 후반 — 디자인 + 콘텐츠(매핑) 병행 중.** 앱 코드는 아직 0.
+- 작성: 2026-06-09
+- 브랜치: `main`·`dev` origin 동기화 (`00012dd`)
+- 단계: **Phase 1 빌드 진입 — 스캐폴딩 + 디자인 시스템(공유 컴포넌트) 완료.** 페이지 풀 포팅·콘텐츠는 진행 전.
 
 ## 지금까지 한 일
 
-- **문서 아키텍처**: CLAUDE / README / docs{SPEC, DATA, ROADMAP, DESIGN_BRIEF, SNAPSHOT} + `dev`/`main`(fast-forward only, 머지 커밋 X)
-- **Phase 0 검증 통과** (경쟁력 확인 — 사용자 판단)
-- **디자인**: DESIGN_BRIEF → claude design로 핵심 3화면(랜딩·테스트·결과) + 디렉토리 시안 수령 → 양호
-- **16유형 매핑**: 내 1차안 + IVF안 비교표 작성 (아래) — 아버지 검수 대기
+- 문서 6종(CLAUDE/README/docs{SPEC,DATA,ROADMAP,DESIGN_BRIEF,SNAPSHOT}) + `dev`/`main`(ff-only, 머지 커밋 X)
+- Phase 0 검증 통과
+- **스캐폴딩**: Next 16 · React 19 · Tailwind v4 · TS strict, App Router/`src/`. `npm run build` 통과, 16유형 전수 SSG. `lib/scoring`(단일·순수·tie-break)·`queries`·`seo`, `types/domain`, `constants`, `data/types`(IVF 16) + placeholder 질문 12.
+- **디자인 토큰**: `src/app/globals.css` `@theme`(indigo-gold) 라이브, 폰트 `next/font`(Inter+Spectral). `design/tokens.css` = 참조.
+- **공유 컴포넌트**: `ui/{button,card,badge,progress,monogram}` + `layout/{wordmark,header,footer}` — 우리 토큰으로 직접 작성(shadcn 미사용). build·lint·prerender 검증됨.
 
 ## 핵심 결정 (확정 / 잠정)
 
-- **페이지 6종**: `/` 랜딩 · `/test` · `/types` · `/types/[type]`(결과) · `/about` · `/privacy`. 핵심 플로우 3 (랜딩→test→결과). **공유·이메일은 결과 페이지 내부 기능**(별도 페이지 X).
-- **수익**: Phase1 이메일 수집·Amazon·Buy Me a Coffee·POD → P2 Ezoic → P3 PDF·뉴스레터 → P4 Mediavine. (PROJECT.md §5)
-- **랜딩 UX**: **별도 진입 페이지 만들지 않는다.** CTA-first 단일 랜딩 유지(이미 above-the-fold). 16유형 미리보기는 티저로 축소. 헤더 "Start test" 상시 노출.
-- **문항 수**: 시안은 12(축당 3) — 빠르나 결과 불안정 위험. **20문항(축당 5)+홀수 권장**(결과 안정성·깊이). → 미확정.
-- **아키텍처**: 데이터=코드 SSG, DB 없음. 이메일 수집 ConvertKit/Beehiiv·발송 Resend. 번역본 WEB 기본. MBTI 코드는 내부용(사이트 카피 노출 X).
+- **16유형 매핑 = IVF 한국기독학생회안 그대로 채택**(검수 없이 — 신뢰 단체). 데이터에 반영됨(아래).
+- **프리미티브는 토큰 핸드롤**, shadcn은 복잡한 접근성 프리미티브(모달·셀렉트 등) 필요 시에만. (CLAUDE.md 반영)
+- 페이지 6종, 랜딩은 별도 진입페이지 X·CTA-first 단일. 공유·이메일은 결과 페이지 기능.
+- **문항: 현재 placeholder 12개 → 20개(축당 5·홀수) 권장**(미확정).
+- 데이터=코드 SSG·DB 없음. 이메일 수집 ConvertKit/Beehiiv·발송 Resend. 번역본 WEB 기본. 세리프 Spectral. 도메인 후보 `biblecharactertest.com`(미확정).
 
-## 16유형 매핑 — 검수용 비교표 (내 초안 vs IVF)
+## 채택된 16유형 매핑 (IVF) — 데이터 반영됨
 
-> ✅=양쪽 합의 · 🔀=둘 다 타당(택1) · ⭐=내 추천(IVF안 약함). MBTI 타이핑은 해석이라 "정답" 없음 — 아버지(합동 목사) 검수 게이트.
+INTJ Noah · INTP Solomon · ENTJ Paul · ENTP Esther · INFJ Jeremiah · INFP Barnabas · ENFJ Jonathan · ENFP Peter · ISTJ Luke · ISFJ Mary · ESTJ Deborah · ESFJ David · ISTP Rahab · ISFP Adam · ESTP Rebekah · ESFP Jacob
 
-| 코드 | 내 초안 | IVF | 검수 추천 | 비고 |
-|---|---|---|---|---|
-| INTJ | Joseph | Noah | ⭐ **Joseph** | Noah는 ISTJ가 맞음 |
-| INTP | Solomon | Solomon | ✅ **Solomon** | 합의 |
-| ENTJ | Paul | Paul | ✅ **Paul** | 합의 |
-| ENTP | Jacob | Esther | ⭐ **Jacob** | Esther는 ENTP 부적합 |
-| INFJ | Daniel | Jeremiah | ⭐ **Daniel** | Jeremiah는 보통 INFP |
-| INFP | Jeremiah | Barnabas | ⭐ **Jeremiah** | Barnabas는 ENFP 성향 |
-| ENFJ | Moses | Jonathan | ⭐ **Moses** | Jonathan도 가능하나 인지도↓ |
-| ENFP | Peter | Peter | ✅ **Peter** | 합의 |
-| ISTJ | Noah | Luke | 🔀 **Noah / Luke** | 둘 다 강함 — 택1 |
-| ISFJ | Mary | Mary | ✅ **Mary** | 합의 |
-| ESTJ | Deborah | Deborah | ✅ **Deborah** | 합의 |
-| ESFJ | Martha | David | ⭐ **Martha** | David=ESFJ 약함 |
-| ISTP | Gideon | Rahab | 🔀 **Gideon / Rahab** | 둘 다 가능 — 택1 |
-| ISFP | Abigail | Adam | ⭐ **Abigail** | Adam은 본문 근거 없음 |
-| ESTP | Samson | Rebekah | ⭐ **Samson** | Rebekah는 ENTJ 성향 |
-| ESFP | David | Jacob | ⭐ **David** | Jacob은 ENTP 성향 |
+> 프로필 본문(title·tagline·strengths·weaknesses·calling·verses·accent·icon)은 **아직 미작성** — Phase 1 콘텐츠 작업.
 
-**요약**: 합의 5칸(Solomon·Paul·Peter·Mary·Deborah) / 택1 2칸(ISTJ·ISTP) / 내 추천 9칸. → 아버지껜 "합의 5 확인 · 택1 2 선택 · 9칸 A·B 중 택1" 형태로 전달.
+## 다음 할 일
 
-## 디자인 피드백 (claude design 재생성 시 반영)
-
-- **시안 양호**: Pastor-reviewed 배지, 1:1·9:16 공유 카드, 저마찰 질문(진행바·"You're doing great"·"No ads, no tricks"), SAMPLE 라벨, 인디고+크림+골드 톤.
-- **반영할 것**: 랜딩 CTA-first 강화 · 16유형 미리보기 8장→티저 축소 · 헤더 Start 상시(있음) · 공유 링크는 랜딩으로 · 문항 20개.
-- **주의**: 시안 인물 세트(David·Esther·Ruth·Joseph·Moses·Daniel…)는 claude design **placeholder**("Sample · illustrative only"). 실제 16인물·타이틀은 위 검수표 확정본이 진짜 — 디자인이 인물 선정을 고정하게 두지 말 것.
-
-## 다음 할 일 (내일 회사에서)
-
-1. **매핑 비교표 → 아버지(합동 목사) 검수 요청** (합의 5 확인 / 택1 2 선택 / 9칸 택1)
-2. 검수 통과분으로 **유형별 강점·약점·소명·구절(WEB) 풀 초안** 작성
-3. (택1) DESIGN_BRIEF에 위 피드백 반영 → claude design 재생성
-4. 도메인 후보 확정·구매 / Next.js 스캐폴딩
+1. **② 페이지 디자인 포팅** — 특히 **결과/유형 페이지**(강점·약점·소명·구절 블록 + 공유카드 + 이메일 폼 + 수익 모듈), 테스트 UX(진행바 됨·격려 카피), 랜딩 풀. (프로토타입 `screens.jsx`·`chrome.jsx`·`sharecard.jsx` 참조 — Downloads zip)
+2. **③ 콘텐츠** — 16 프로필 본문 + 질문 20개. 이때 `data/types/{id}.ts`로 분리(DATA.md 파일 규칙).
+3. **미뤄둔 갭** — 유형 페이지 JSON-LD · `opengraph-image.tsx`(공유 OG 카드) · Footer를 `/test`에서 숨기기(라우트 그룹).
+4. 도메인 확정·구매 + Vercel 연결.
 
 ## 열린 질문
 
-- 문항 수 12 vs 20
-- ISTJ(Noah/Luke), ISTP(Gideon/Rahab) 택1
-- 도메인명 (PROJECT.md §12)
-- About/Privacy 시안 필요 여부 (현재는 불필요로 판단)
+- 문항 12 vs 20
+- 프로필 본문 작성 시 아버지(합동 목사) 톤 확인 여부 (매핑은 IVF 확정, 본문은 별개)
+- 도메인명
