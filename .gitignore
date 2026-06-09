@@ -1,15 +1,38 @@
-# Design exports — heavy/throwaway (archived in Downloads zip)
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# design exports — heavy/throwaway (archived in Downloads zip)
 design/*.html
 
-# Dependencies / build (future Next.js scaffold)
-node_modules/
-.next/
-out/
-build/
-
-# Env & local
-.env
-.env*.local
-
-# OS
+# misc
 .DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# env files
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts

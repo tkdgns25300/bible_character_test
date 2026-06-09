@@ -6,6 +6,8 @@
  * Full export (jsx · screenshots · standalone) archived in the Downloads zip — not committed.
  *
  * Active palette: indigo-gold. Two alternatives kept (commented) below.
+ * NOTE: the LIVE build tokens now live in src/app/globals.css (@theme). This file is
+ * the design reference (incl. the two alternative palettes); globals.css is authoritative.
  * Per-type accent colors are DATA (src/data/types), NOT tokens.
  * Behavior/pages: docs/SPEC.md · brand intent: docs/DESIGN_BRIEF.md
  */
