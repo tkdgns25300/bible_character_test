@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Spectral } from "next/font/google";
+import { Header } from "@/components/layout/header";
+import { Footer } from "@/components/layout/footer";
 import { SITE_NAME, SITE_URL } from "@/lib/seo";
 import "./globals.css";
 
@@ -22,12 +24,11 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${spectral.variable} h-full`}
-    >
-      <body className="bg-bg text-ink font-sans min-h-full antialiased">
-        {children}
+    <html lang="en" className={`${inter.variable} ${spectral.variable} h-full`}>
+      <body className="bg-bg text-ink font-sans flex min-h-full flex-col antialiased">
+        <Header />
+        <div className="flex-1">{children}</div>
+        <Footer />
       </body>
     </html>
   );

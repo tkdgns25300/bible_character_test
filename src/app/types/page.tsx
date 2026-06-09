@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { Card } from "@/components/ui/card";
+import { Monogram } from "@/components/ui/monogram";
 import { getAllTypes } from "@/lib/queries";
 import { pageMetadata } from "@/lib/seo";
 
@@ -18,15 +20,16 @@ export default function TypesPage() {
       </p>
       <div className="mt-8 grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] gap-4">
         {types.map((type) => (
-          <Link
-            key={type.id}
-            href={`/types/${type.id}`}
-            className="rounded-card border border-line bg-surface p-5 transition-shadow hover:shadow-md"
-          >
-            <div className="text-lg font-bold">{type.character}</div>
-            <div className="text-sm text-ink-faint">
-              {type.title ?? "Profile coming soon"}
-            </div>
+          <Link key={type.id} href={`/types/${type.id}`}>
+            <Card className="flex h-full items-center gap-4 p-5 transition-shadow hover:shadow-md">
+              <Monogram initial={type.character.charAt(0)} accent={type.accent} size={48} />
+              <div>
+                <div className="text-lg font-bold">{type.character}</div>
+                <div className="text-sm text-ink-faint">
+                  {type.title ?? "Profile coming soon"}
+                </div>
+              </div>
+            </Card>
           </Link>
         ))}
       </div>

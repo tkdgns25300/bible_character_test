@@ -8,7 +8,7 @@
 
 영어권 "성경 인물 성격 테스트" 정적 사이트. 질문에 답하면 4축(E/I·S/N·T/F·J/P) 성향을 16유형으로 집계하고, 각 유형에 매핑된 성경 인물(다윗·다니엘·마리아 등)과 강점·약점·영적 소명·추천 구절을 보여준다. **차별점 = 목사 검수를 거친 신학적 정확성.** 성장 = SEO + 결과 공유 바이럴.
 
-**Stack**: Next.js (App Router, SSG) · React · TypeScript strict · Tailwind + shadcn/ui · Vercel · npm
+**Stack**: Next.js (App Router, SSG) · React · TypeScript strict · Tailwind v4 (+ shadcn for complex primitives) · Vercel · npm
 
 > 버전은 스캐폴딩 시 확정. 공통 인프라 재사용 시 worshipers와 정렬 (Next.js 16 · React 19 · Tailwind v4).
 
@@ -83,7 +83,7 @@ public/images/types/{type-id}.*   유형 대표(히어로) 이미지 — 선택.
 
 ### Component (`components/**`)
 - prop으로 데이터 받음. 직접 import·fetch 안 함.
-- `ui/` = shadcn 원본. 도메인 로직 없음.
+- `ui/` = 우리 토큰 기반 프리미티브(직접 작성, 도메인 로직 없음). 복잡한 접근성 프리미티브(모달·셀렉트 등)가 필요해지면 그때 shadcn 추가.
 
 ## Clean Code Principles
 
@@ -107,7 +107,7 @@ public/images/types/{type-id}.*   유형 대표(히어로) 이미지 — 선택.
 - `any` 금지. 불가피하면 `unknown` + 타입 가드. 공유 타입은 `types/domain.ts`.
 
 **Styling**
-- Tailwind 인라인. 별도 CSS 파일 X (`globals.css` 제외). shadcn 우선. **모바일 퍼스트** (`base`→`sm`→`md`→`lg`).
+- Tailwind 인라인. 별도 CSS 파일 X (`globals.css` 제외). **프리미티브는 우리 토큰으로 직접 작성**(shadcn은 복잡한 접근성 프리미티브에만). **모바일 퍼스트** (`base`→`sm`→`md`→`lg`).
 
 **Copy**
 - 모든 사이트 노출 텍스트는 **영어** (영어권 타겟).

@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
 import { QUESTIONS } from "@/data/questions";
 import { scoreAnswers } from "@/lib/scoring";
 import type { Pole } from "@/types/domain";
@@ -24,23 +27,34 @@ export default function TestPage() {
 
   return (
     <main className="mx-auto flex w-full max-w-[680px] flex-col px-5 py-10 md:px-8">
-      <p className="text-sm font-semibold text-ink-faint">
-        Question {index + 1} / {QUESTIONS.length}
-      </p>
-      <div className="mt-6 rounded-card border border-line bg-surface p-8 text-center shadow-md">
-        <h1 className="text-2xl font-semibold leading-snug">{question.text}</h1>
-        <div className="mt-8 flex flex-col gap-3">
+      <div className="flex items-center gap-3">
+        <Progress value={index} max={QUESTIONS.length} />
+        <span className="min-w-[44px] text-right text-sm font-semibold tabular-nums text-ink-faint">
+          {index + 1} / {QUESTIONS.length}
+        </span>
+      </div>
+
+      <Card className="mt-6 p-8 text-center shadow-md">
+        <p className="text-xs font-bold uppercase tracking-widest text-ink-faint">
+          Question {index + 1}
+        </p>
+        <h1 className="mx-auto mt-4 max-w-md text-2xl font-semibold leading-snug">
+          {question.text}
+        </h1>
+        <div className="mx-auto mt-8 flex max-w-sm flex-col gap-3">
           {question.options.map((option) => (
-            <button
+            <Button
               key={option.pole}
+              variant="outline"
+              size="lg"
               onClick={() => choose(option.pole)}
-              className="h-14 rounded-btn border border-line-strong bg-surface font-semibold hover:bg-surface-2"
             >
               {option.text}
-            </button>
+            </Button>
           ))}
         </div>
-      </div>
+      </Card>
+
       <p className="mt-4 text-center text-sm text-ink-faint">
         Placeholder questions — full test UX &amp; reviewed items to come.
       </p>
