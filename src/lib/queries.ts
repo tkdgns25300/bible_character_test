@@ -16,3 +16,9 @@ export function getTypeByCode(code: TypeCode): BibleType {
   if (!type) throw new Error(`No Bible type mapped for code "${code}"`);
   return type;
 }
+
+export function getTypesByIds(ids: string[]): BibleType[] {
+  return ids
+    .map((id) => TYPES.find((t) => t.id === id))
+    .filter((t): t is BibleType => Boolean(t));
+}

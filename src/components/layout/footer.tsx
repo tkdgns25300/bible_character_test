@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Coffee, Mail } from "lucide-react";
 import { Wordmark } from "@/components/layout/wordmark";
+import { BMC_COLOR, BUY_ME_A_COFFEE_URL } from "@/constants";
 
 export function Footer() {
   return (
@@ -14,9 +15,9 @@ export function Footer() {
         </p>
         <div className="flex flex-wrap items-center gap-2.5">
           <a
-            href="#"
+            href={BUY_ME_A_COFFEE_URL}
             className="inline-flex h-[42px] items-center gap-2 rounded-btn px-4 text-sm font-bold"
-            style={{ background: "#ffdd00", color: "#1a1a1a" }}
+            style={{ background: BMC_COLOR.bg, color: BMC_COLOR.fg }}
           >
             <Coffee size={17} /> Buy me a coffee
           </a>

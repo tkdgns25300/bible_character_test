@@ -21,7 +21,7 @@ export default function TestPage() {
       setSelected(next);
       setIndex(index + 1);
     } else {
-      router.push(`/types/${scoreAnswers(next).id}`);
+      router.push(`/types/${scoreAnswers(next).id}?from=test`);
     }
   }
 
