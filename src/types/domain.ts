@@ -33,20 +33,21 @@ export interface BibleType {
   code: TypeCode; // internal; never surfaced in copy (no "MBTI")
   character: string;
 
-  // Profile content — authored + pastor-reviewed before publish (docs/DATA.md).
-  // Optional so pre-review stubs are representable; reviewedBy gates publish.
-  title?: string;
-  tagline?: string;
+  // Profile content — authored from source + pastor-reviewed (docs/DATA.md).
+  // Optional so pre-content stubs are representable.
+  title?: string; // e.g. "The Long-view Strategist"
+  traits?: string[]; // 3-4 keyword chips
   summary?: string;
-  strengths?: string[];
-  weaknesses?: string[];
-  calling?: string;
-  verses?: Verse[];
-  books?: BookRec[];
+  lines?: string[]; // punchy one-line descriptions (strengths + quirks mixed)
+  calling?: string; // spiritual calling — our depth differentiator
+  verses?: Verse[]; // public-domain translation
+  readingRef?: string; // where to read more, e.g. "Genesis 6"
+  bestMatch?: string; // "best match" type id
+  worstMatch?: string; // "toughest match" type id
 
   accent?: string; // per-type accent (hex) — data, not a global token
   accentInk?: string;
   icon?: string; // lucide icon name
-  related?: string[]; // related type ids (growth/kin)
+  books?: BookRec[];
   reviewedBy?: string; // e.g. 'pastor-2026-06'; unset = not yet publishable
 }

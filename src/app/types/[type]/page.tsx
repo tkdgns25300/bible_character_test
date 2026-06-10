@@ -3,12 +3,12 @@ import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { ResultBanner } from "@/components/result/result-banner";
 import { ResultHero } from "@/components/result/result-hero";
-import { ComingSoon, RelatedTypes, ResultBody } from "@/components/result/result-blocks";
+import { ComingSoon, Matches, ResultBody } from "@/components/result/result-blocks";
 import { ShareButtons } from "@/components/result/share-card";
 import { EmailCapture } from "@/components/monetize/email-capture";
 import { AdSlot, BookModule, CoffeeModule, PodModule } from "@/components/monetize/modules";
 import { Card } from "@/components/ui/card";
-import { getAllTypes, getTypeById, getTypesByIds } from "@/lib/queries";
+import { getAllTypes, getTypeById } from "@/lib/queries";
 import { pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
@@ -40,7 +40,9 @@ export default async function TypePage({
   const { type } = await params;
   const found = getTypeById(type);
   if (!found) notFound();
-  const hasProfile = Boolean(found.strengths?.length);
+  const hasProfile = Boolean(found.lines?.length);
+  const best = found.bestMatch ? getTypeById(found.bestMatch) : undefined;
+  const worst = found.worstMatch ? getTypeById(found.worstMatch) : undefined;
 
   return (
     <main>
@@ -80,7 +82,7 @@ export default async function TypePage({
         </div>
       </section>
 
-      <RelatedTypes types={getTypesByIds(found.related ?? [])} />
+      <Matches best={best} worst={worst} />
     </main>
   );
 }

@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { AlertCircle, ArrowRight, BookOpen, Flame, Sparkles } from "lucide-react";
+import { ArrowRight, BookOpen, Flame, ScrollText, Sparkles } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Monogram } from "@/components/ui/monogram";
 import type { BibleType, Verse as VerseType } from "@/types/domain";
@@ -27,18 +27,6 @@ function ResultBlock({
   );
 }
 
-function TraitList({ items }: { items: string[] }) {
-  return (
-    <ul className="flex flex-col gap-2.5">
-      {items.map((item) => (
-        <li key={item} className="text-[15.5px] leading-snug text-ink">
-          {item}
-        </li>
-      ))}
-    </ul>
-  );
-}
-
 function Verse({ verse }: { verse: VerseType }) {
   return (
     <div className="border-l-[3px] border-primary pl-4">
@@ -56,18 +44,17 @@ function Verse({ verse }: { verse: VerseType }) {
 export function ResultBody({ type }: { type: BibleType }) {
   return (
     <div className="flex flex-col gap-4">
-      <div className="grid gap-4 sm:grid-cols-2">
-        {type.strengths?.length ? (
-          <ResultBlock icon={<Sparkles size={20} />} label="Strengths">
-            <TraitList items={type.strengths} />
-          </ResultBlock>
-        ) : null}
-        {type.weaknesses?.length ? (
-          <ResultBlock icon={<AlertCircle size={20} />} label="Watch-outs">
-            <TraitList items={type.weaknesses} />
-          </ResultBlock>
-        ) : null}
-      </div>
+      {type.lines?.length ? (
+        <ResultBlock icon={<Sparkles size={20} />} label="What you're like">
+          <ul className="flex flex-col gap-2.5">
+            {type.lines.map((line) => (
+              <li key={line} className="text-[15.5px] leading-snug text-ink">
+                {line}
+              </li>
+            ))}
+          </ul>
+        </ResultBlock>
+      ) : null}
       {type.calling ? (
         <ResultBlock icon={<Flame size={20} />} label="Spiritual calling">
           <p className="text-[16.5px] leading-relaxed">{type.calling}</p>
@@ -82,6 +69,11 @@ export function ResultBody({ type }: { type: BibleType }) {
           </div>
         </ResultBlock>
       ) : null}
+      {type.readingRef ? (
+        <div className="flex items-center gap-2 text-sm text-ink-faint">
+          <ScrollText size={16} /> Read more: {type.readingRef}
+        </div>
+      ) : null}
     </div>
   );
 }
@@ -91,33 +83,43 @@ export function ComingSoon({ character }: { character: string }) {
     <Card className="p-8 text-center">
       <h3 className="text-xl font-bold">Full profile coming soon</h3>
       <p className="mx-auto mt-2 max-w-md text-ink-soft">
-        {character}&apos;s complete strengths, calling, and verses are being written
+        {character}&apos;s complete profile, calling, and verses are being written
         and pastor-reviewed.
       </p>
     </Card>
   );
 }
 
-export function RelatedTypes({ types }: { types: BibleType[] }) {
-  if (!types.length) return null;
+function MatchCard({ type, kind }: { type: BibleType; kind: "best" | "worst" }) {
+  const label = kind === "best" ? "Best match" : "Toughest match";
+  const labelClass = kind === "best" ? "text-primary" : "text-gold-ink";
+  return (
+    <Link href={`/types/${type.id}`}>
+      <Card className="flex items-center gap-3.5 p-4 hover:shadow-md">
+        <Monogram initial={type.character.charAt(0)} accent={type.accent} size={44} />
+        <div className="flex-1">
+          <div className={`text-xs font-bold uppercase tracking-widest ${labelClass}`}>
+            {label}
+          </div>
+          <div className="font-bold">{type.character}</div>
+          {type.title && <div className="text-sm text-ink-faint">{type.title}</div>}
+        </div>
+        <ArrowRight size={18} className="text-ink-faint" />
+      </Card>
+    </Link>
+  );
+}
+
+export function Matches({ best, worst }: { best?: BibleType; worst?: BibleType }) {
+  if (!best && !worst) return null;
   return (
     <section className="mx-auto w-full max-w-[1080px] px-5 pb-12 md:px-8">
-      <h2 className="text-sm font-bold uppercase tracking-widest text-gold-ink">
-        Characters near you
+      <h2 className="mb-4 text-sm font-bold uppercase tracking-widest text-gold-ink">
+        Who you click with
       </h2>
-      <div className="mt-4 grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-3.5">
-        {types.map((r) => (
-          <Link key={r.id} href={`/types/${r.id}`}>
-            <Card className="flex items-center gap-3.5 p-4 hover:shadow-md">
-              <Monogram initial={r.character.charAt(0)} accent={r.accent} size={44} />
-              <div className="flex-1">
-                <div className="font-bold">{r.character}</div>
-                <div className="text-sm text-ink-faint">{r.title ?? "Profile coming soon"}</div>
-              </div>
-              <ArrowRight size={18} className="text-ink-faint" />
-            </Card>
-          </Link>
-        ))}
+      <div className="grid gap-3.5 sm:grid-cols-2">
+        {best && <MatchCard type={best} kind="best" />}
+        {worst && <MatchCard type={worst} kind="worst" />}
       </div>
     </section>
   );

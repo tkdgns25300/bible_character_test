@@ -26,9 +26,18 @@ export function ResultHero({ type }: { type: BibleType }) {
           {type.title && (
             <div className="mt-3 text-2xl font-bold text-primary">{type.title}</div>
           )}
-          {type.tagline && (
-            <p className="mt-3 font-serif text-lg italic text-ink-soft">{type.tagline}</p>
-          )}
+          {type.traits?.length ? (
+            <div className="mt-4 flex flex-wrap gap-2">
+              {type.traits.map((trait) => (
+                <span
+                  key={trait}
+                  className="rounded-full bg-surface-2 px-3 py-1 text-sm font-semibold text-ink-soft"
+                >
+                  {trait}
+                </span>
+              ))}
+            </div>
+          ) : null}
           {type.summary && (
             <p className="mt-4 max-w-xl text-[16.5px] leading-relaxed text-ink-soft">
               {type.summary}

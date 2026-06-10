@@ -8,7 +8,7 @@ import type { BibleType } from "@/types/domain";
 // design later (opengraph-image.tsx — deferred).
 function ShareCard({ type, format }: { type: BibleType; format: "square" | "story" }) {
   const accent = type.accent ?? "var(--color-gold)";
-  const keyTrait = type.strengths?.[0] ?? type.tagline;
+  const keyTrait = type.traits?.[0] ?? type.lines?.[0];
   return (
     <div
       className={`relative overflow-hidden rounded-card bg-primary text-white shadow-xl ${
