@@ -56,7 +56,7 @@ export default function TestPage() {
       </Card>
 
       <p className="mt-4 text-center text-sm text-ink-faint">
-        Placeholder questions — full test UX &amp; reviewed items to come.
+        No ads, no tricks — just {QUESTIONS.length} honest questions.
       </p>
     </main>
   );
