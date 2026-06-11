@@ -16,3 +16,8 @@ export function getTypeByCode(code: TypeCode): BibleType {
   if (!type) throw new Error(`No Bible type mapped for code "${code}"`);
   return type;
 }
+
+// Avatar path convention for a type id (see public/images/types/).
+export function typeImageSrc(id: string): string {
+  return `/images/types/${id}.png`;
+}

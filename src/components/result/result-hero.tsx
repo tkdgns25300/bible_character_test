@@ -2,8 +2,9 @@ import Link from "next/link";
 import { RefreshCw, Share2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
-import { Monogram } from "@/components/ui/monogram";
+import { Avatar } from "@/components/ui/avatar";
 import { ShareCardPreview } from "@/components/result/share-card";
+import { typeImageSrc } from "@/lib/queries";
 import type { BibleType } from "@/types/domain";
 
 export function ResultHero({ type }: { type: BibleType }) {
@@ -15,7 +16,13 @@ export function ResultHero({ type }: { type: BibleType }) {
             SAMPLE · illustrative only
           </Badge>
           <div className="mb-4 flex items-center gap-4">
-            <Monogram initial={type.character.charAt(0)} accent={type.accent} size={64} />
+            <Avatar
+              src={typeImageSrc(type.id)}
+              alt={type.character}
+              initial={type.character.charAt(0)}
+              accent={type.accent}
+              size={64}
+            />
             <div className="text-sm font-bold uppercase tracking-widest text-gold-ink">
               You are
             </div>

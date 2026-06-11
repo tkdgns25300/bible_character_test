@@ -2,7 +2,8 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { ArrowRight, BookOpen, Flame, ScrollText, Sparkles } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import { Monogram } from "@/components/ui/monogram";
+import { Avatar } from "@/components/ui/avatar";
+import { typeImageSrc } from "@/lib/queries";
 import type { BibleType, Verse as VerseType } from "@/types/domain";
 
 function ResultBlock({
@@ -96,7 +97,13 @@ function MatchCard({ type, kind }: { type: BibleType; kind: "best" | "worst" }) 
   return (
     <Link href={`/types/${type.id}`}>
       <Card className="flex items-center gap-3.5 p-4 hover:shadow-md">
-        <Monogram initial={type.character.charAt(0)} accent={type.accent} size={44} />
+        <Avatar
+          src={typeImageSrc(type.id)}
+          alt={type.character}
+          initial={type.character.charAt(0)}
+          accent={type.accent}
+          size={44}
+        />
         <div className="flex-1">
           <div className={`text-xs font-bold uppercase tracking-widest ${labelClass}`}>
             {label}

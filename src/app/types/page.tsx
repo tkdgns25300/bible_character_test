@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Card } from "@/components/ui/card";
-import { Monogram } from "@/components/ui/monogram";
-import { getAllTypes } from "@/lib/queries";
+import { Avatar } from "@/components/ui/avatar";
+import { getAllTypes, typeImageSrc } from "@/lib/queries";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -22,7 +22,13 @@ export default function TypesPage() {
         {types.map((type) => (
           <Link key={type.id} href={`/types/${type.id}`}>
             <Card className="flex h-full items-center gap-4 p-5 transition-shadow hover:shadow-md">
-              <Monogram initial={type.character.charAt(0)} accent={type.accent} size={48} />
+              <Avatar
+                src={typeImageSrc(type.id)}
+                alt={type.character}
+                initial={type.character.charAt(0)}
+                accent={type.accent}
+                size={48}
+              />
               <div>
                 <div className="text-lg font-bold">{type.character}</div>
                 <div className="text-sm text-ink-faint">

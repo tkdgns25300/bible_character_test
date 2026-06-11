@@ -3,9 +3,9 @@ import { ArrowRight, BookOpen, Compass, ShieldCheck, Sparkles, Users } from "luc
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Monogram } from "@/components/ui/monogram";
+import { Avatar } from "@/components/ui/avatar";
 import { QUESTIONS } from "@/data/questions";
-import { getAllTypes } from "@/lib/queries";
+import { getAllTypes, typeImageSrc } from "@/lib/queries";
 
 const DISCOVER = [
   {
@@ -74,7 +74,13 @@ export default function LandingPage() {
             {types.slice(0, 8).map((type) => (
               <Link key={type.id} href={`/types/${type.id}`}>
                 <Card className="flex h-full flex-col gap-3 p-4 transition-shadow hover:shadow-md">
-                  <Monogram initial={type.character.charAt(0)} accent={type.accent} size={42} />
+                  <Avatar
+                    src={typeImageSrc(type.id)}
+                    alt={type.character}
+                    initial={type.character.charAt(0)}
+                    accent={type.accent}
+                    size={42}
+                  />
                   <div>
                     <div className="font-bold">{type.character}</div>
                     <div className="text-[13px] leading-tight text-ink-faint">
