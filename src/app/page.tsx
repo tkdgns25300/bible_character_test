@@ -6,6 +6,7 @@ import { Card } from "@/components/ui/card";
 import { Avatar } from "@/components/ui/avatar";
 import { QUESTIONS } from "@/data/questions";
 import { getAllTypes, typeImageSrc } from "@/lib/queries";
+import { websiteJsonLd } from "@/lib/seo";
 
 const DISCOVER = [
   {
@@ -29,6 +30,10 @@ export default function LandingPage() {
   const types = getAllTypes();
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd()) }}
+      />
       {/* Hero */}
       <section className="mx-auto w-full max-w-[1080px] px-5 pb-10 pt-16 md:px-8">
         <Badge tone="gold">Pastor-reviewed</Badge>

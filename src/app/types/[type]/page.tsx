@@ -9,7 +9,7 @@ import { EmailCapture } from "@/components/monetize/email-capture";
 import { AdSlot, BookModule, CoffeeModule, PodModule } from "@/components/monetize/modules";
 import { Card } from "@/components/ui/card";
 import { getAllTypes, getTypeById } from "@/lib/queries";
-import { pageMetadata } from "@/lib/seo";
+import { pageMetadata, typeJsonLd } from "@/lib/seo";
 
 export function generateStaticParams() {
   return getAllTypes().map((type) => ({ type: type.id }));
@@ -46,6 +46,10 @@ export default async function TypePage({
 
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(typeJsonLd(found)) }}
+      />
       <Suspense fallback={null}>
         <ResultBanner />
       </Suspense>
