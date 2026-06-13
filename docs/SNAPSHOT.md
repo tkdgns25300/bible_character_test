@@ -4,7 +4,7 @@
 
 ## 시점
 
-- 작성: 2026-06-13
+- 작성: 2026-06-14
 - 브랜치: `main`·`dev` origin 동기화
 - 단계: **Phase 1 빌드 — 핵심 플로우(랜딩→테스트→결과) + SEO/바이럴 표면(OG·JSON-LD·favicon)까지 완성.** 검수 콘텐츠·실연동·인프라·IP가 남음.
 
@@ -16,7 +16,7 @@
 - **결과/유형 페이지 풀 포팅**: 히어로(칩·공유카드 1:1·9:16) → "What you're like"(lines) → Read more → Best/Toughest match → 수익 모듈(email·books·POD·coffee·share·ad)
 - **16유형 콘텐츠**: IVF 매핑+설명을 영어로 각색 (title·traits·lines·readingRef) + 궁합 차트 기반 best/worst(상호 대칭, 친족 미엮음) + accent/icon. **verses·calling 비어 있음(아버지 검수 몫).**
 - **20문항 오리지널 2지선다**(축당 5·홀수, 채점 `lib/scoring` 동작) — 외부 복제 아님
-- **랜딩 풀 포팅**: 히어로 / 16유형 미리보기 / What you'll discover / 신뢰 노트 / 마감 CTA
+- **랜딩 = 원페이지 퍼널로 단순화**: 뱃지·헤드라인·한 줄 카피·`Start the test`·`/types` 링크만 (16유형 그리드·What you'll discover·트러스트·마감 CTA 제거 → /types·/about이 담당). 동작을 "시작" 하나로 모음
 - **인물 아바타**: 16명 일러스트 생성·워터마크 제거 → `next/image` 최적화 서빙(랜딩·디렉토리·결과). Monogram 폴백 제거
 - **SEO/바이럴 표면**: 유형별 동적 OG 카드(`opengraph-image.tsx`, accent 프레임에 인물) + 사이트 OG + JSON-LD(랜딩 `WebSite`·유형 `Article`) + sitemap·robots
 - **브랜드 마크 통일**: 펼친 책 마크(`ui/brand-mark.tsx`) → favicon(`icon.svg`)·로고(Wordmark)·OG에 동일 적용
@@ -39,3 +39,4 @@
 
 - 도메인명 / verses·calling 작성 시점(아버지) / IVF IP 처리
 - 문항 톤·개수(현재 20) 최종 확정
+- **디자인 단순화 진행 중** — 랜딩 1차 완료, `/test`·결과 페이지 "과함" 검토 대기 (계속 수정 예정)
