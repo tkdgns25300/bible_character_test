@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 /* Design tokens — LIVE build source. (design/tokens.css = reference incl. alt palettes.)
- * Active palette: indigo-gold. See design/README.md. */
+ * Active palette: emerald-gold. See design/README.md. */
 @theme {
   --color-bg: #faf8f3;
   --color-surface: #ffffff;
   --color-surface-2: #f4f1ea;
-  --color-ink: #1c1733;
-  --color-ink-soft: #534d6b;
-  --color-ink-faint: #8b8499;
-  --color-primary: #4f46e5;
-  --color-primary-700: #4338ca;
-  --color-primary-50: #eef2ff;
+  --color-ink: #221f1a;
+  --color-ink-soft: #565049;
+  --color-ink-faint: #8b847a;
+  --color-primary: #0e7a57;
+  --color-primary-700: #0a5e43;
+  --color-primary-50: #e7f4ee;
   --color-gold: #bd8f33;
   --color-gold-soft: #f4e9cb;
   --color-gold-ink: #7a5a14;

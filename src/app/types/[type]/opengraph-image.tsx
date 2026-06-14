@@ -42,7 +42,7 @@ export default async function Image({
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          background: "#4f46e5",
+          background: "#0e7a57",
           color: "#ffffff",
           padding: 72,
           fontFamily: "sans-serif",
