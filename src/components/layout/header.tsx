@@ -4,7 +4,6 @@ import { Wordmark } from "@/components/layout/wordmark";
 import { buttonVariants } from "@/components/ui/button";
 
 const NAV = [
-  { href: "/test", label: "Test" },
   { href: "/types", label: "Types" },
   { href: "/about", label: "About" },
 ] as const;
