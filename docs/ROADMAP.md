@@ -55,7 +55,8 @@
 ### 1-4. 수익·런칭 (출시 Day 0)
 - [ ] 이메일 수집 폼 + ConvertKit/Beehiiv (발송은 Resend)
 - [ ] 공유 버튼 + 유형별 동적 OG 이미지
-- [ ] Amazon 링크 · POD 링크 · Buy Me a Coffee
+- [ ] Amazon 링크 · POD 링크
+- [ ] **Buy Me a Coffee**: 실제 계정·정산(한국 PayPal 등) 셋업 → `BUY_ME_A_COFFEE_URL` 교체(현재 `#` 플레이스홀더). 후원 버튼을 결과 페이지뿐 아니라 **전 페이지에서 접근 가능**하게 노출(헤더/플로팅 위젯 등 위치 결정)
 - [ ] sitemap·robots · 분석(Plausible/GA4) · Search Console
 
 > **Phase 1 완료 기준**: 테스트 → 결과 → 공유·이메일까지 동작, 모바일 OK, SEO·검수 통과.
