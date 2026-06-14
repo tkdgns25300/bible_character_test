@@ -54,7 +54,7 @@ export const TYPES: BibleType[] = [
     id: "paul",
     code: "ENTJ",
     character: "Paul",
-    title: "The Owner of Grand Ambition",
+    title: "The Driven Visionary",
     traits: ["Driven", "Commanding", "Strategic", "Bold"],
     lines: [
       "You have a strong drive to lead.",
@@ -154,7 +154,7 @@ export const TYPES: BibleType[] = [
     id: "peter",
     code: "ENFP",
     character: "Peter",
-    title: "Spontaneous and Full of Energy",
+    title: "The Spirited Inspirer",
     traits: ["Energetic", "Passionate", "Relational", "Expressive"],
     lines: [
       "You're lively, driven, and gifted with people.",
@@ -273,7 +273,7 @@ export const TYPES: BibleType[] = [
     id: "adam",
     code: "ISFP",
     character: "Adam",
-    title: "The Curious, Poetic Gardener",
+    title: "The Poetic Gardener",
     traits: ["Gentle", "Artistic", "Warm", "Humble"],
     lines: [
       "You're quiet and deep about spiritual things, serving where no one's watching.",
@@ -293,7 +293,7 @@ export const TYPES: BibleType[] = [
     id: "rebekah",
     code: "ESTP",
     character: "Rebekah",
-    title: "The One Who Seizes the Moment",
+    title: "The Decisive Doer",
     traits: ["Bold", "Charismatic", "Spontaneous", "Decisive"],
     lines: [
       "You're brave and charismatic — and you don't always stop to deliberate.",
@@ -313,7 +313,7 @@ export const TYPES: BibleType[] = [
     id: "jacob",
     code: "ESFP",
     character: "Jacob",
-    title: "The One Who Stands Out Everywhere",
+    title: "The Natural Performer",
     traits: ["Outgoing", "Warm", "Lively", "Generous"],
     lines: [
       "You're action-oriented, drawn to the outward side of the spiritual life.",
