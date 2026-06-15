@@ -235,13 +235,26 @@ export const TYPES: BibleType[] = [
     character: "David",
     title: "The Caring Shepherd",
     traits: ["Caring", "Faithful", "Relational", "Devoted"],
+    summary: "Warm, loyal, and built to care for the people around you.",
     lines: [
-      "You show your devotion by serving and working alongside others.",
-      "You draw strength from close relationships — with God and with people.",
-      "Service, mercy, and sharing good news come naturally to you.",
-      "You're the person people call when they need help.",
-      "You read people well and say the right thing at the right time.",
-      "Quiet time alone with God is where you find your balance.",
+      "You lead by caring — people feel safe, seen, and steadied around you.",
+      "Loyalty runs deep; you keep showing up for the people entrusted to you.",
+      "You read a room well and offer the right word at the right moment.",
+      "Worship is honest for you — you bring your whole heart, highs and lows alike, before God.",
+      "Your warmth can slide into needing everyone's approval; not every burden is yours to carry.",
+      "You're at your strongest with a clear circle of people to protect and serve.",
+    ],
+    calling:
+      "You're made to shepherd — to notice the overlooked, calm the anxious, and carry people toward God with steady warmth. That care goes furthest when it rests on God's approval rather than the crowd's.",
+    giftName: "Service & care",
+    prayer:
+      "Lord, make me faithful with the few you've trusted to my care — and let my worth rest in you, not in their applause.",
+    verses: [
+      {
+        ref: "Psalm 23:1",
+        text: "The LORD is my shepherd; I shall not want.",
+        translation: "KJV",
+      },
     ],
     readingRef: "1 Samuel 16; Psalm 23",
     bestMatch: "adam",

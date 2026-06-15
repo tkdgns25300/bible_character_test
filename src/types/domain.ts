@@ -39,7 +39,9 @@ export interface BibleType {
   traits?: string[]; // 3-4 keyword chips
   summary?: string;
   lines?: string[]; // punchy one-line descriptions (strengths + quirks mixed)
-  calling?: string; // spiritual calling — our depth differentiator
+  calling?: string; // spiritual calling/gift — our depth differentiator
+  giftName?: string; // short gift label, e.g. "Service & care"
+  prayer?: string; // a short, in-character prayer
   verses?: Verse[]; // public-domain translation
   readingRef?: string; // where to read more, e.g. "Genesis 6"
   bestMatch?: string; // "best match" type id
