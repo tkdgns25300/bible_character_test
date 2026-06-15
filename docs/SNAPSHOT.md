@@ -4,7 +4,7 @@
 
 ## 시점
 
-- 작성: 2026-06-14
+- 작성: 2026-06-15
 - 브랜치: `main`·`dev` origin 동기화
 - 단계: **Phase 1 빌드 — 핵심 플로우 + SEO/바이럴 표면 + 디자인 톤 리프레시(에메랄드·랜딩/푸터 단순화)까지.** 검수 콘텐츠·실연동·인프라·IP가 남음.
 
@@ -13,8 +13,8 @@
 - 문서 + `dev`/`main`(ff-only, 머지 커밋 X)
 - **스캐폴딩**: Next 16 · React 19 · Tailwind v4 · TS strict, App Router/`src/`, build 통과, 16유형 SSG
 - **디자인 토큰**(globals `@theme`, emerald-gold) + 폰트 next/font(Inter+Spectral) + **공유 컴포넌트**(`ui/`·`layout/`, 토큰 핸드롤)
-- **결과/유형 페이지 풀 포팅**: 히어로(칩·공유카드 1:1·9:16) → "What you're like"(lines) → Read more → Best/Toughest match → 수익 모듈(email·books·POD·coffee·share·ad)
-- **16유형 콘텐츠**: IVF 매핑+설명을 영어로 각색 (title·traits·lines·readingRef) + 궁합 차트 기반 best/worst(상호 대칭, 친족 미엮음) + accent/icon. **verses·calling 비어 있음(아버지 검수 몫).**
+- **유형(=결과) 페이지 재설계**: 2단 "한눈에" 레이아웃(데스크톱 카드 좌/정체성 우, 모바일 스택) → What you're like → In Scripture(구절·기도·은사) → Best/Toughest match → Share. **코드(ESFJ)·수익화·SAMPLE 제거**
+- **16유형 매핑**(코드·title·traits·readingRef·궁합·accent/icon) 완료. 설명 등 표현은 **오리지널 작성으로 전환 중** — **다윗(ESFJ) 오리지널 샘플 완료**(설명·소명·은사·기도 + Psalm 23:1 KJV). 모델에 `prayer`·`giftName` 추가. 나머지 15개 + 검수 대기
 - **20문항 오리지널 2지선다**(축당 5·홀수, 채점 `lib/scoring` 동작) — 외부 복제 아님
 - **랜딩 = 원페이지 퍼널**: 반응형 헤드라인(`are you?` 강조 줄)·한 줄 카피·`Start the test` 버튼만. 뱃지·reassurance·browse 링크·그리드·트러스트·마감 CTA 전부 제거 → 동작을 "시작" 하나로
 - **디자인 톤 = 에메랄드**: primary 인디고→에메랄드(`#0e7a57`), ink 보라끼 제거(따뜻한 near-black). 토큰·책 마크·favicon·OG 일괄 적용. 크림+골드 유지
@@ -31,14 +31,14 @@
 
 ## 다음 할 일
 
-1. **verses·calling** — 아버지(합동 목사) 검수로 채움 (현재 비어 있어 ComingSoon 표시) ← 출시 게이트
-2. **IP 게이트**: IVF 파생(매핑·설명) — 출시 전 오리지널화 또는 IVF 허락 ← 출시 게이트
+1. **유형별 오리지널 콘텐츠 15개**(설명·소명·은사·기도 + 공개도메인 구절) → 아버지(합동 목사) 검수 ← 출시 게이트. 번역본 표준(KJV/WEB) 확정
+2. **IP 게이트**: 오리지널화로 방향 확정(출처표기만으론 부족). IVF 정식 허가 요청 발송 — 거부 시 오리지널 유지, 승인 시 각색 선택지 ← 출시 게이트
 3. 이메일 수집·공유 버튼 **실연동**(ConvertKit/Beehiiv) + 분석(Plausible/GA4)·Search Console
 4. 도메인 확정·구매 → Vercel production 연결
 5. `/types` 디렉토리 보강, **Footer를 `/test`에서 숨김**(라우트 그룹)
 
 ## 열린 질문
 
-- 도메인명 / verses·calling 작성 시점(아버지) / IVF IP 처리
+- 도메인명 / IVF 허가 회신(거부 시 오리지널 유지=롤백 불필요) / 번역본 KJV vs WEB
 - 문항 톤·개수(현재 20) 최종 확정
-- **디자인 진행 중** — 에메랄드 팔레트·랜딩·헤더·푸터 1차 완료. **푸터 재작업 대기**(Types 제거·Contact 이메일·About/Privacy 법적 정비·후원 링크 재설계) + `/test`·결과 페이지 검토
+- **디자인 진행 중** — 에메랄드 팔레트·랜딩·헤더·푸터·About/Privacy·유형 페이지(2단 한눈에) 완료. **`/test`(질문 플로) 검토 대기**
