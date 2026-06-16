@@ -2,11 +2,9 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { ResultBanner } from "@/components/result/result-banner";
-import { ResultHero } from "@/components/result/result-hero";
 import {
   Matches,
-  Personality,
-  ScriptureSection,
+  ResultProfile,
   ShareSection,
 } from "@/components/result/result-blocks";
 import { getAllTypes, getTypeById } from "@/lib/queries";
@@ -54,9 +52,7 @@ export default async function TypePage({
         <ResultBanner />
       </Suspense>
 
-      <ResultHero type={found} />
-      <Personality type={found} />
-      <ScriptureSection type={found} />
+      <ResultProfile type={found} />
       <Matches best={best} worst={worst} />
       <ShareSection />
     </main>

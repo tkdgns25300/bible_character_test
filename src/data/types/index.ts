@@ -246,7 +246,6 @@ export const TYPES: BibleType[] = [
     ],
     calling:
       "You're made to shepherd — to notice the overlooked, calm the anxious, and carry people toward God with steady warmth. That care goes furthest when it rests on God's approval rather than the crowd's.",
-    giftName: "Service & care",
     prayer:
       "Lord, make me faithful with the few you've trusted to my care — and let my worth rest in you, not in their applause.",
     verses: [
@@ -256,7 +255,7 @@ export const TYPES: BibleType[] = [
         translation: "KJV",
       },
     ],
-    readingRef: "1 Samuel 16; Psalm 23",
+    readingRef: "1 Samuel 16–17",
     bestMatch: "adam",
     worstMatch: "esther",
     accent: "#b8895a",

@@ -1,141 +1,164 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, BookOpen, Gift, Heart, ScrollText, Sparkles } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Avatar } from "@/components/ui/avatar";
 import { ShareButtons } from "@/components/result/share-card";
 import { typeImageSrc } from "@/lib/queries";
-import type { BibleType, Verse as VerseType } from "@/types/domain";
+import type { BibleType } from "@/types/domain";
 
-const SECTION = "mx-auto w-full max-w-[680px] px-5 md:px-8";
+const WRAP = "mx-auto w-full max-w-[800px] px-5 py-12 md:px-8 md:py-14";
 const LABEL = "text-sm font-bold uppercase tracking-widest text-gold-ink";
+const SUBLABEL = "text-xs font-bold uppercase tracking-wider text-ink-faint";
 
-// Placeholder for content not yet authored / pastor-reviewed.
 function Placeholder({ children }: { children: ReactNode }) {
   return (
-    <div className="mt-4 rounded-card border border-dashed border-line-strong bg-surface-2/60 p-4 text-[15px] leading-relaxed text-ink-faint">
+    <div className="mt-5 rounded-card border border-dashed border-line-strong bg-surface/70 p-5 text-[15px] leading-relaxed text-ink-faint">
       {children}
     </div>
   );
 }
 
-function Verse({ verse }: { verse: VerseType }) {
-  return (
-    <div className="border-l-[3px] border-primary pl-4">
-      <p className="font-serif text-xl italic leading-relaxed">“{verse.text}”</p>
-      <div className="mt-2 flex items-center gap-2">
-        <span className="text-sm font-bold">{verse.ref}</span>
-        <span className="rounded border border-line bg-surface-2 px-1.5 py-0.5 text-[11px] font-bold tracking-wider text-ink-faint">
-          {verse.translation}
-        </span>
-      </div>
-    </div>
-  );
-}
-
-export function Personality({ type }: { type: BibleType }) {
-  if (!type.lines?.length) return null;
-  return (
-    <section className={`${SECTION} py-10`}>
-      <h2 className={LABEL}>What you&apos;re like</h2>
-      <ul className="mt-4 flex flex-col gap-3">
-        {type.lines.map((line) => (
-          <li
-            key={line}
-            className="flex gap-2.5 text-base leading-relaxed text-ink md:text-[17px]"
-          >
-            <Sparkles size={17} className="mt-1 flex-none text-primary" />
-            <span>{line}</span>
-          </li>
-        ))}
-      </ul>
-    </section>
-  );
-}
-
-function SubBlock({
-  icon,
-  title,
-  badge,
-  children,
-}: {
-  icon: ReactNode;
-  title: string;
-  badge?: string;
-  children: ReactNode;
-}) {
-  return (
-    <div className="mt-7">
-      <h3 className="flex flex-wrap items-center gap-2 text-lg font-bold">
-        <span className="text-primary">{icon}</span>
-        {title}
-        {badge ? (
-          <span className="rounded-full bg-primary-50 px-2.5 py-0.5 text-sm font-semibold text-primary">
-            {badge}
-          </span>
-        ) : null}
-      </h3>
-      {children}
-    </div>
-  );
-}
-
-export function ScriptureSection({ type }: { type: BibleType }) {
-  const hasContent = Boolean(
+export function ResultProfile({ type }: { type: BibleType }) {
+  const accent = type.accent ?? "var(--color-gold)";
+  const hasScripture = Boolean(
     type.verses?.length || type.calling || type.prayer,
   );
   return (
-    <section className="border-y border-line bg-surface">
-      <div className={`${SECTION} py-10`}>
-        <h2 className={LABEL}>In Scripture</h2>
-        {type.readingRef && (
-          <p className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-base text-ink md:text-[17px]">
-            <ScrollText size={18} className="flex-none text-primary" />
-            <span>
-              Read {type.character}&apos;s story in{" "}
-              <span className="font-semibold">{type.readingRef}</span>.
-            </span>
-          </p>
-        )}
+    <>
+      {/* 1 — Identity */}
+      <section className="border-b border-line-strong bg-surface">
+        <div className={WRAP}>
+          <div className="flex flex-col items-center gap-8 text-center md:flex-row md:items-center md:gap-10 md:text-left">
+            <div
+              className="flex-none rounded-[28px] p-2.5 shadow-md"
+              style={{ backgroundColor: accent }}
+            >
+              <div className="overflow-hidden rounded-[20px]">
+                <Image
+                  src={typeImageSrc(type.id)}
+                  alt={type.character}
+                  width={576}
+                  height={576}
+                  priority
+                  className="h-64 w-64 object-cover sm:h-72 sm:w-72"
+                />
+              </div>
+            </div>
+            <div>
+              <span className="text-sm font-bold uppercase tracking-[0.2em] text-gold-ink">
+                You are
+              </span>
+              <h1 className="mt-2 font-serif text-5xl font-semibold leading-none md:text-6xl">
+                {type.character}
+              </h1>
+              {type.title && (
+                <p className="mt-3 text-xl font-bold text-primary">
+                  {type.title}
+                </p>
+              )}
+              {type.summary && (
+                <p className="mt-4 max-w-md text-[16.5px] leading-relaxed text-ink-soft">
+                  {type.summary}
+                </p>
+              )}
+              {type.traits?.length ? (
+                <div className="mt-5 flex flex-wrap justify-center gap-2 md:justify-start">
+                  {type.traits.map((trait) => (
+                    <span
+                      key={trait}
+                      className="rounded-full bg-surface-2 px-3 py-1 text-sm font-semibold text-ink-soft"
+                    >
+                      {trait}
+                    </span>
+                  ))}
+                </div>
+              ) : null}
+            </div>
+          </div>
+        </div>
+      </section>
 
-        {type.verses?.length ? (
-          <SubBlock icon={<BookOpen size={20} />} title="Verses for you">
-            <div className="mt-4 flex flex-col gap-5">
-              {type.verses.map((v) => (
-                <Verse key={v.ref} verse={v} />
+      {/* 2 — What you're like */}
+      {type.lines?.length ? (
+        <section className="border-b border-line-strong bg-surface-2">
+          <div className={WRAP}>
+            <h2 className={LABEL}>What you&apos;re like</h2>
+            <div className="mt-6 grid gap-x-8 gap-y-5 sm:grid-cols-2">
+              {type.lines.map((line) => (
+                <div key={line} className="flex gap-3">
+                  <span className="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-primary-50 text-primary">
+                    <Check size={14} strokeWidth={3} />
+                  </span>
+                  <span className="text-[15.5px] leading-snug text-ink">
+                    {line}
+                  </span>
+                </div>
               ))}
             </div>
-          </SubBlock>
-        ) : null}
+          </div>
+        </section>
+      ) : null}
 
-        {type.prayer ? (
-          <SubBlock icon={<Heart size={20} />} title="How you might pray">
-            <p className="mt-3 font-serif text-lg italic leading-relaxed text-ink-soft">
-              “{type.prayer}”
+      {/* 3 — In Scripture */}
+      <section className="border-b border-line-strong bg-surface">
+        <div className={WRAP}>
+          <h2 className={LABEL}>In Scripture</h2>
+          {type.readingRef && (
+            <p className="mt-3 text-[15px] text-ink-soft">
+              Read {type.character}&apos;s story in{" "}
+              <span className="font-semibold text-ink">{type.readingRef}</span>.
             </p>
-          </SubBlock>
-        ) : null}
+          )}
 
-        {type.calling ? (
-          <SubBlock
-            icon={<Gift size={20} />}
-            title="Your gift"
-            badge={type.giftName}
-          >
-            <p className="mt-3 text-base leading-relaxed md:text-[17px]">
-              {type.calling}
-            </p>
-          </SubBlock>
-        ) : null}
+          {hasScripture ? (
+            <div className="mt-7 flex flex-col gap-8">
+              {type.verses?.length ? (
+                <div>
+                  <div className={SUBLABEL}>Verses for you</div>
+                  <div className="mt-3 flex flex-col gap-5 border-l-[3px] border-primary pl-5">
+                    {type.verses.map((v) => (
+                      <div key={v.ref}>
+                        <p className="font-serif text-xl italic leading-relaxed text-ink">
+                          “{v.text}”
+                        </p>
+                        <div className="mt-2 text-sm font-semibold text-ink-soft">
+                          {v.ref}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
 
-        {!hasContent ? (
-          <Placeholder>
-            Verses, a prayer, and a reflection on your gift are pastor-reviewed
-            — coming soon.
-          </Placeholder>
-        ) : null}
-      </div>
-    </section>
+              {type.prayer ? (
+                <div>
+                  <div className={SUBLABEL}>How you might pray</div>
+                  <p className="mt-3 border-l-[3px] border-primary pl-5 font-serif text-xl italic leading-relaxed text-ink">
+                    “{type.prayer}”
+                  </p>
+                </div>
+              ) : null}
+
+              {type.calling ? (
+                <div>
+                  <div className={SUBLABEL}>Your gift</div>
+                  <p className="mt-3 text-[16px] leading-relaxed text-ink">
+                    {type.calling}
+                  </p>
+                </div>
+              ) : null}
+            </div>
+          ) : (
+            <Placeholder>
+              Verses, a prayer, and a reflection on your gift are
+              pastor-reviewed — coming soon.
+            </Placeholder>
+          )}
+        </div>
+      </section>
+    </>
   );
 }
 
@@ -168,11 +191,13 @@ function MatchCard({ type, kind }: { type: BibleType; kind: "best" | "worst" }) 
 export function Matches({ best, worst }: { best?: BibleType; worst?: BibleType }) {
   if (!best && !worst) return null;
   return (
-    <section className={`${SECTION} py-10`}>
-      <h2 className={LABEL}>Who you click with</h2>
-      <div className="mt-4 grid gap-3.5 sm:grid-cols-2">
-        {best && <MatchCard type={best} kind="best" />}
-        {worst && <MatchCard type={worst} kind="worst" />}
+    <section className="border-b border-line-strong bg-surface-2">
+      <div className={WRAP}>
+        <h2 className={LABEL}>Who you click with</h2>
+        <div className="mt-5 grid gap-3.5 sm:grid-cols-2">
+          {best && <MatchCard type={best} kind="best" />}
+          {worst && <MatchCard type={worst} kind="worst" />}
+        </div>
       </div>
     </section>
   );
@@ -180,22 +205,16 @@ export function Matches({ best, worst }: { best?: BibleType; worst?: BibleType }
 
 export function ShareSection() {
   return (
-    <section className={`${SECTION} pb-14 pt-10`}>
-      <Card className="p-6 text-center md:p-8">
-        <h2 className="text-xl font-bold md:text-2xl">Share your character</h2>
-        <p className="mx-auto mt-2 max-w-md text-[15px] text-ink-soft">
-          Post your result or send it to a friend who should take the test.
+    <section className="mx-auto w-full max-w-[800px] px-5 pb-14 pt-10 md:px-8">
+      <div className="flex flex-col items-center gap-4">
+        <ShareButtons />
+        <p className="text-sm text-ink-soft">
+          Haven&apos;t taken the test yet?{" "}
+          <Link href="/test" className="font-semibold text-primary hover:underline">
+            Start the free test →
+          </Link>
         </p>
-        <div className="mt-5">
-          <ShareButtons />
-        </div>
-      </Card>
-      <p className="mt-6 text-center text-sm text-ink-soft">
-        Haven&apos;t taken the test yet?{" "}
-        <Link href="/test" className="font-semibold text-primary hover:underline">
-          Start the free test →
-        </Link>
-      </p>
+      </div>
     </section>
   );
 }

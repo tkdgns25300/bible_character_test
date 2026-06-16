@@ -92,9 +92,10 @@ export function ShareButtons() {
   // Brand icons were dropped from lucide; labels only until real share intents wire up.
   const socials = ["Instagram", "X", "Facebook"];
   const btn =
-    "inline-flex h-12 min-w-[110px] flex-1 items-center justify-center gap-2 rounded-btn border border-line-strong bg-surface text-sm font-semibold text-ink hover:bg-surface-2";
+    "inline-flex h-9 items-center gap-1.5 rounded-full border border-line bg-surface px-4 text-sm font-medium text-ink-soft transition-colors hover:bg-surface-2 hover:text-ink";
   return (
-    <div className="flex flex-wrap gap-2.5">
+    <div className="flex flex-wrap items-center justify-center gap-2">
+      <span className="mr-1 text-sm font-semibold text-ink-faint">Share</span>
       {socials.map((label) => (
         <button key={label} className={btn}>
           {label}
@@ -108,7 +109,7 @@ export function ShareButtons() {
           setTimeout(() => setCopied(false), 1600);
         }}
       >
-        {copied ? <Check size={18} /> : <Link2 size={18} />} {copied ? "Copied!" : "Copy link"}
+        {copied ? <Check size={15} /> : <Link2 size={15} />} {copied ? "Copied" : "Copy link"}
       </button>
     </div>
   );
