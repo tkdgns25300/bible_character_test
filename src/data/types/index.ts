@@ -310,13 +310,31 @@ export const TYPES: BibleType[] = [
     character: "Luke",
     title: "The Thorough Observer",
     traits: ["Thorough", "Reliable", "Steady", "Practical"],
+    summary:
+      "Careful, steady, and dependable — you do things properly and see them through.",
     lines: [
-      "You have a deep hunger for truth and won't be swept up by fads.",
-      "You lean conservative and traditional — a dependable backbone of your church.",
-      "You don't make noise about it, but you guard your faith and follow what's practical.",
-      "Service, discernment, and counsel come naturally.",
-      "Watch the stubbornness; leave room for spontaneity.",
-      "Worshiping with others and early-morning prayer keep you balanced.",
+      "You like to get things right — careful, accurate, and thorough.",
+      "You're hungry for truth and don't get swept up in the latest hype.",
+      "People can count on you; you quietly keep your word and your faith.",
+      "You value what's proven — order, tradition, and doing it the right way.",
+      "Watch the stubborn streak — leave a little room for spontaneity and other views.",
+      "Faithfulness in the small, unseen things is its own kind of greatness.",
+    ],
+    calling:
+      "You're made to be steady — to seek the truth carefully, serve faithfully, and be the dependable backbone others lean on. It matters most when your reliability is offered to God, not just to a routine.",
+    prayer:
+      "Lord, make me faithful in the small things — let me serve carefully, hold to your truth, and stay open to the people and surprises you send.",
+    verses: [
+      {
+        ref: "Luke 1:3",
+        text: "It seemed good to me also, having had perfect understanding of all things from the very first, to write unto thee in order, most excellent Theophilus.",
+        translation: "KJV",
+      },
+      {
+        ref: "Luke 16:10",
+        text: "He that is faithful in that which is least is faithful also in much: and he that is unjust in the least is unjust also in much.",
+        translation: "KJV",
+      },
     ],
     readingRef: "Luke 1; Acts 1",
     bestMatch: "rebekah",
@@ -330,13 +348,31 @@ export const TYPES: BibleType[] = [
     character: "Mary",
     title: "The Responsible Nurturer",
     traits: ["Nurturing", "Humble", "Faithful", "Devoted"],
+    summary:
+      "Humble, caring, and faithful — you serve quietly and carry others with a steady heart.",
     lines: [
-      "You can hold firmly to truth and stay genuinely humble.",
-      "You serve and sacrifice quietly, behind the scenes.",
-      "You have strong convictions that move others; mercy and giving come naturally.",
-      "Watch out for burnout.",
-      "Quiet worship and prayer help you tend your feelings.",
-      "Forgive yourself for not being perfect — your tenderness already makes you a good teacher.",
+      "You serve quietly behind the scenes, without needing the credit.",
+      "You're humble, yet you hold firmly to what you believe.",
+      "Caring for others is your reflex — mercy and gentleness come naturally.",
+      "Your steady devotion quietly encourages everyone around you.",
+      "You give and give — watch for burnout, and let others care for you too.",
+      "You don't have to be perfect; your tenderness already makes you a steady example.",
+    ],
+    calling:
+      "You're made to nurture — to serve faithfully, comfort the weary, and say yes to God with a humble, willing heart. Like Mary, what matters isn't being noticed but trusting God and treasuring his word.",
+    prayer:
+      "Lord, give me a willing heart like Mary's — let me serve humbly, trust your word, and rest in your care even as I care for others.",
+    verses: [
+      {
+        ref: "Luke 1:46-47",
+        text: "And Mary said, My soul doth magnify the Lord, and my spirit hath rejoiced in God my Saviour.",
+        translation: "KJV",
+      },
+      {
+        ref: "Luke 2:19",
+        text: "But Mary kept all these things, and pondered them in her heart.",
+        translation: "KJV",
+      },
     ],
     readingRef: "Luke 1–2",
     bestMatch: "jacob",
@@ -350,13 +386,31 @@ export const TYPES: BibleType[] = [
     character: "Deborah",
     title: "The Confident Protector",
     traits: ["Decisive", "Principled", "Orderly", "Strong"],
+    summary:
+      "Decisive and principled — you take charge and protect what matters.",
     lines: [
-      "You're a pillar of the church, active in your service.",
-      "You believe faith rests on truth and obedience.",
-      "You're skilled at explaining the word and teach with strong conviction.",
-      "You're faithful to tradition and value logic, realism, and history.",
-      "Management, discipline, and leadership are your strengths.",
-      "Make room to listen to others' opinions.",
+      "You step up and lead — people look to you to make the call.",
+      "You're principled and decisive: you know what's right and you act on it.",
+      "You explain truth clearly and teach with real conviction.",
+      "You value order, tradition, and getting things done well.",
+      "You lead so naturally that you can forget to listen — make room for other voices.",
+      "Strength is at its best protecting the weak and pointing people to God.",
+    ],
+    calling:
+      "You're made to lead and protect — to make firm decisions, uphold what's right, and steady people in hard times. It honors God most when your strength serves others and stays humble enough to listen.",
+    prayer:
+      "Lord, make me a wise leader — strong enough to act, humble enough to listen, and always pointing people to you rather than to me.",
+    verses: [
+      {
+        ref: "Micah 6:8",
+        text: "He hath shewed thee, O man, what is good; and what doth the LORD require of thee, but to do justly, and to love mercy, and to walk humbly with thy God?",
+        translation: "KJV",
+      },
+      {
+        ref: "Proverbs 31:25",
+        text: "Strength and honour are her clothing; and she shall rejoice in time to come.",
+        translation: "KJV",
+      },
     ],
     readingRef: "Judges 4",
     bestMatch: "rahab",
