@@ -1,12 +1,12 @@
 # CLAUDE.md — Bible Character Test
 
-> **이 파일은 HOW** — 아키텍처·코드 컨벤션·Git 워크플로. 페이지·기능은 [`docs/SPEC.md`](./docs/SPEC.md), 데이터·채점·검수는 [`docs/DATA.md`](./docs/DATA.md), 작업 순서는 [`docs/ROADMAP.md`](./docs/ROADMAP.md), 비주얼·브랜드는 [`docs/DESIGN_BRIEF.md`](./docs/DESIGN_BRIEF.md), 시점 핸드오프(현재 상태)는 [`docs/SNAPSHOT.md`](./docs/SNAPSHOT.md), 환경·셋업은 [`README.md`](./README.md). 상위 사업 전략은 `~/Desktop/bible-personality-test-PROJECT.md`.
+> **이 파일은 HOW** — 아키텍처·코드 컨벤션·Git 워크플로. 페이지·기능은 [`docs/SPEC.md`](./docs/SPEC.md), 데이터·채점은 [`docs/DATA.md`](./docs/DATA.md), 작업 순서는 [`docs/ROADMAP.md`](./docs/ROADMAP.md), 비주얼·브랜드는 [`docs/DESIGN_BRIEF.md`](./docs/DESIGN_BRIEF.md), 시점 핸드오프(현재 상태)는 [`docs/SNAPSHOT.md`](./docs/SNAPSHOT.md), 환경·셋업은 [`README.md`](./README.md). 상위 사업 전략은 `~/Desktop/bible-personality-test-PROJECT.md`.
 >
 > **문서 책임 분리** — 같은 사실을 두 곳에 쓰지 않는다. 아키텍처·컨벤션은 여기, 페이지 명세는 SPEC, 데이터·채점은 DATA, 작업은 ROADMAP, 비주얼·브랜드는 DESIGN_BRIEF, 환경은 README.
 
 ## Project
 
-영어권 "성경 인물 성격 테스트" 정적 사이트. 질문에 답하면 4축(E/I·S/N·T/F·J/P) 성향을 16유형으로 집계하고, 각 유형에 매핑된 성경 인물(다윗·다니엘·마리아 등)과 강점·약점·영적 소명·추천 구절을 보여준다. **차별점 = 목사 검수를 거친 신학적 정확성.** 성장 = SEO + 결과 공유 바이럴.
+영어권 "성경 인물 성격 테스트" 정적 사이트. 질문에 답하면 4축(E/I·S/N·T/F·J/P) 성향을 16유형으로 집계하고, 각 유형에 매핑된 성경 인물(다윗·다니엘·마리아 등)과 강점·약점·영적 소명·추천 구절을 보여준다. **차별점 = 신학적으로 정확하면서 공유하고 싶은 결과.** 성장 = SEO + 결과 공유 바이럴.
 
 **Stack**: Next.js (App Router, SSG) · React · TypeScript strict · Tailwind v4 (+ shadcn for complex primitives) · Vercel · npm
 
@@ -132,6 +132,6 @@ public/images/types/{type-id}.*   유형 대표(히어로) 이미지 — 선택.
 1. `npm run build` 통과 (TypeScript + 정적 생성)
 2. 미사용 import/변수 없음 · `any` 없음 · 단일 책임 · 네이밍만으로 역할 이해 가능
 3. **채점 로직**: `lib/scoring.ts`에서만. 컴포넌트에 분산 금지
-4. **새 유형/질문 데이터**: DATA.md 타입·파일 규칙 준수, 발행 전 신학 검수(`reviewedBy`) 통과
+4. **새 유형/질문 데이터**: DATA.md 타입·파일 규칙 준수. 노출 카피는 오리지널, 구절은 공개도메인(KJV)
 5. **새 페이지**: `generateMetadata` + (유형 페이지는) JSON-LD + OG 이미지 + sitemap 반영
 6. **새 id/파일명/라우트**: 영어 kebab-case. 사이트 카피는 영어

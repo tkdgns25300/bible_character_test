@@ -34,7 +34,7 @@ export default function Image() {
             are you?
           </span>
           <span style={{ fontSize: 30, color: "rgba(255,255,255,0.8)", marginTop: 18 }}>
-            A free, pastor-reviewed personality test.
+            A free personality test, rooted in Scripture.
           </span>
         </div>
         <span style={{ fontSize: 26, color: "rgba(255,255,255,0.7)" }}>

@@ -152,8 +152,7 @@ export function ResultProfile({ type }: { type: BibleType }) {
             </div>
           ) : (
             <Placeholder>
-              Verses, a prayer, and a reflection on your gift are
-              pastor-reviewed — coming soon.
+              Verses, a prayer, and a reflection on your gift are coming soon.
             </Placeholder>
           )}
         </div>

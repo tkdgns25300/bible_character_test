@@ -27,7 +27,7 @@ Design a complete, cohesive UI for the product below. Deliver (1) a small **desi
 - **What:** A free personality test (~20–30 questions) that maps the user to one of **16 Bible characters** (David, Daniel, Mary, …) and shows their **Strengths, Weaknesses, Spiritual Calling, and recommended Verses**.
 - **Audience:** English-speaking Christians, arriving from search ("which Bible character am I") and social shares. Mostly **mobile**.
 - **Benchmark:** 16Personalities — depth, a free test, and high shareability.
-- **Differentiator:** theological accuracy (pastor-reviewed). The design must feel **trustworthy, not gimmicky**.
+- **Differentiator:** theological accuracy (grounded in Scripture). The design must feel **trustworthy, not gimmicky**.
 - **Priority:** the **result must be share-worthy**; monetization is secondary and must never obscure the result or the share action.
 - **Nature:** a fast, static, SEO-driven site. No login, accounts, or payments. Calm and trustworthy, but alive.
 
@@ -65,7 +65,7 @@ Full site: Landing, Test, Type directory (`/types`), Type/Result page (`/types/[
 
 ### A. Landing (`/`)
 - Hook headline + subhead + a large **"Start the test"** CTA.
-- 3 short "what you'll discover" points; a preview of the 16 types (link to `/types`). A small trust note (pastor-reviewed).
+- 3 short "what you'll discover" points; a preview of the 16 types (link to `/types`). A small trust note (grounded in Scripture).
 
 ### B. Test (`/test`)
 - One question per screen, a **progress bar**, back/next. Binary agree/disagree options. Encouraging microcopy. **No ads.**

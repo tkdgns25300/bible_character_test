@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: { default: SITE_NAME, template: `%s · ${SITE_NAME}` },
   description:
-    "A free, pastor-reviewed personality test that maps your story to a character of Scripture — with your strengths, your calling, and verses chosen for you.",
+    "A free personality test, rooted in Scripture, that maps your story to a character of the Bible — with your strengths, your calling, and verses chosen for you.",
 };
 
 export default function RootLayout({

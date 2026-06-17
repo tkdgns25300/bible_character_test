@@ -3,13 +3,13 @@
 > 페이지는 [`SPEC.md`](./SPEC.md), 데이터·채점은 [`DATA.md`](./DATA.md), 환경은 [`../README.md`](../README.md). 상위 사업 전략·수익 단계·리스크는 `~/Desktop/bible-personality-test-PROJECT.md`.
 > 브랜치: `main`(배포·default) / `dev`(작업). commit·push·merge는 사용자 명시 시에만. merge 커밋 X (fast-forward).
 
-## 현재 상태 (2026-06-07)
+## 현재 상태 (2026-06-17)
 
 - ✅ 컨셉·수익 전략·결과 구조 결정 (PROJECT.md)
-- ✅ 기본 문서·브랜치 셋업 완료 (CLAUDE/README/docs · dev·main)
-- ✅ **Phase 0 검증 통과 — "가자"** (경쟁력 확인)
-- ⏳ 도메인 미구입 / 16유형 매핑 미작성 / 디자인·코드 0
-- **다음**: 디자인(claude design) + 16유형 매핑(아버지 검수) **병행** → 스캐폴딩 → Phase 1
+- ✅ 스캐폴딩·디자인·핵심 플로우·SEO/바이럴 표면 완료 (SNAPSHOT 참조)
+- ✅ **16유형 오리지널 콘텐츠 전부 완료** (summary·lines·calling·prayer + KJV 구절)
+- ⏳ 도메인 미구입 / 실연동(이메일·분석) 미완 / Vercel 미연결
+- **다음**: 20문항 검토 → 실연동·인프라 → 출시
 
 ## Phase 0 — 검증 + 셋업 (빌드 전)
 
@@ -39,12 +39,12 @@
 - [ ] `lib/scoring.ts` (채점 단일 정의) · `lib/queries.ts` · `lib/seo.ts`
 - [ ] 레이아웃(헤더·푸터) + `globals.css` + `<html lang="en">`
 
-### 1-2. 콘텐츠 (검수 게이트)
-> 정책: IVF 출처표기만으론 저작권 미해결 → **유형별 설명·소명·은사·기도는 오리지널 작성**, 구절은 **공개도메인(KJV/WEB)**, 아버지 검수. (IVF 정식 허가 요청 발송 — 거부 시 오리지널 유지, 승인 시 각색 선택지)
+### 1-2. 콘텐츠
+> 정책: 노출 카피는 전부 오리지널(IVF는 매핑 참조만), 구절은 공개도메인 **KJV**. 개신교 관점.
 - [x] 16유형 ↔ 인물 매핑 (코드·title·traits·readingRef·궁합)
-- [ ] **유형별 오리지널 콘텐츠**(설명·소명·은사·기도) + 공개도메인 구절 → 검수 → `reviewedBy` — **다윗 샘플 1개 완료, 15개 남음**
-- [ ] 번역본 표준 확정 (KJV 클래식 / WEB 모던 택1)
-- [ ] 질문지(20문항 오리지널) → 검수
+- [x] **유형별 오리지널 콘텐츠**(summary·lines·calling·prayer + KJV 구절) — **16/16 완료**
+- [x] 번역본 표준 = **KJV** 확정
+- [ ] 질문지(20문항) 검토 — 일반성·적절성
 - [ ] Amazon 도서 큐레이션 (유형별 3~5권)
 
 ### 1-3. 페이지
@@ -61,7 +61,7 @@
 - [ ] **Buy Me a Coffee**: 실제 계정·정산(한국 PayPal 등) 셋업 → `BUY_ME_A_COFFEE_URL` 교체(현재 `#` 플레이스홀더). 후원 버튼을 결과 페이지뿐 아니라 **전 페이지에서 접근 가능**하게 노출(헤더/플로팅 위젯 등 위치 결정)
 - [ ] sitemap·robots · 분석(Plausible/GA4) · Search Console
 
-> **Phase 1 완료 기준**: 테스트 → 결과 → 공유·이메일까지 동작, 모바일 OK, SEO·검수 통과.
+> **Phase 1 완료 기준**: 테스트 → 결과 → 공유·이메일까지 동작, 모바일 OK, SEO 통과.
 
 ## Phase 2+ — 트래픽 임계치 (PROJECT.md §5)
 

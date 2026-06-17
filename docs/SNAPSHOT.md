@@ -4,9 +4,9 @@
 
 ## 시점
 
-- 작성: 2026-06-16
+- 작성: 2026-06-17
 - 브랜치: `main`·`dev` origin 동기화
-- 단계: **Phase 1 빌드 — 핵심 플로우 + SEO/바이럴 표면 + 디자인 톤 리프레시(에메랄드·랜딩/푸터 단순화)까지.** 검수 콘텐츠·실연동·인프라·IP가 남음.
+- 단계: **Phase 1 빌드 — 핵심 플로우 + SEO/바이럴 표면 + 디자인 + 16유형 오리지널 콘텐츠까지 완료.** 실연동·인프라·도메인이 남음.
 
 ## 지금까지 한 일
 
@@ -14,7 +14,7 @@
 - **스캐폴딩**: Next 16 · React 19 · Tailwind v4 · TS strict, App Router/`src/`, build 통과, 16유형 SSG
 - **디자인 토큰**(globals `@theme`, emerald-gold) + 폰트 next/font(Inter+Spectral) + **공유 컴포넌트**(`ui/`·`layout/`, 토큰 핸드롤)
 - **유형(=결과) 페이지 재설계**: 3개 밴드 섹션 — Identity(카드+이름) → What you're like(2열 체크) → In Scripture(구절·기도·은사), 배경 교차 + Best/Toughest match + Share. **코드(ESFJ)·수익화·SAMPLE 제거**
-- **16유형 매핑**(코드·title·traits·readingRef·궁합·accent/icon) 완료. 설명 표현은 **오리지널 작성으로 전환** — **다윗(ESFJ) 오리지널 샘플 완료**(설명·소명·은사·기도 + Psalm 23:1 KJV). 모델에 `prayer` 추가. 나머지 15개 오리지널 작성 + 검수 대기
+- **16유형 콘텐츠 전부 완료**: 매핑(코드·title·traits·readingRef·궁합·accent/icon) + 오리지널 프로필(summary·lines·calling·prayer + KJV 구절 1~2개). IVF는 매핑 참조만, 카피는 전부 오리지널. 개신교 관점(마리아=숭배 아님, "하나님 내 구주"). 모델에 `summary`·`prayer` 추가, `reviewedBy`·giftName 제거. 4개 temperament 배치로 작성
 - **20문항 오리지널 2지선다**(축당 5·홀수, 채점 `lib/scoring` 동작) — 외부 복제 아님
 - **랜딩 = 원페이지 퍼널**: 반응형 헤드라인(`are you?` 강조 줄)·한 줄 카피·`Start the test` 버튼만. 뱃지·reassurance·browse 링크·그리드·트러스트·마감 CTA 전부 제거 → 동작을 "시작" 하나로
 - **디자인 톤 = 에메랄드**: primary 인디고→에메랄드(`#0e7a57`), ink 보라끼 제거(따뜻한 near-black). 토큰·책 마크·favicon·OG 일괄 적용. 크림+골드 유지
@@ -31,14 +31,13 @@
 
 ## 다음 할 일
 
-1. **유형별 오리지널 콘텐츠 15개**(설명·소명·은사·기도 + KJV 구절) → 아버지(합동 목사) 검수 ← 출시 게이트. **(작성 착수 — 다윗 방식 그대로)**
-2. **IP 게이트**: 오리지널화로 방향 확정(출처표기만으론 부족). IVF 정식 허가 요청 발송 — 거부 시 오리지널 유지, 승인 시 각색 선택지 ← 출시 게이트
-3. 이메일 수집·공유 버튼 **실연동**(ConvertKit/Beehiiv) + 분석(Plausible/GA4)·Search Console
-4. 도메인 확정·구매 → Vercel production 연결
-5. `/types` 디렉토리 보강, **Footer를 `/test`에서 숨김**(라우트 그룹)
+1. **20문항 검토** — 질문이 일반적·적절한지 점검 (현재 축당 5문항·총 20)
+2. 이메일 수집·공유 버튼 **실연동**(ConvertKit/Beehiiv) + 분석(Plausible/GA4)·Search Console
+3. 도메인 확정·구매 → Vercel production 연결
+4. `/types` 디렉토리 보강, **Footer를 `/test`에서 숨김**(라우트 그룹)
 
 ## 열린 질문
 
-- 도메인명 / IVF 허가 회신(거부 시 오리지널 유지=롤백 불필요)
+- 도메인명
 - 문항 톤·개수(현재 20) 최종 확정
 - **디자인 진행 중** — 에메랄드 팔레트·랜딩·헤더·푸터·About/Privacy·유형 페이지(3-섹션 밴드) 완료. **`/test`(질문 플로) 검토 대기**

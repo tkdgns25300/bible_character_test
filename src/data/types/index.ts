@@ -1,14 +1,13 @@
 import type { BibleType } from "@/types/domain";
 
 // 16 personality-code -> Bible character mapping + profiles.
-// Source: IVF 한국기독학생회 mapping & descriptions (Korean), adapted to English.
+// Mapping derived from IVF 한국기독학생회 (code<->character, readingRef) as reference;
+// all surfaced copy (summary/lines/calling/prayer) is original (docs/DATA.md).
 // bestMatch/worstMatch follow the standard MBTI compatibility chart pattern:
 //   best  = duality pair (flip E/I and J/P, keep middle two)  — mutual
 //   worst = conflict pair (per the chart's NF·NT ↔ SP·SJ red blocks) — mutual
 //   (a few worst pairs were swapped so close relatives aren't paired, e.g. David–Solomon)
-// verses/calling are intentionally LEFT EMPTY — Scripture content is filled at
-// pastor review, not improvised here (docs/DATA.md). readingRef is IVF's pointer.
-// TODO: split into types/{id}.ts once verses/calling land (DATA.md file rule).
+// Verses are public-domain KJV. TODO: split into types/{id}.ts if this file grows.
 export const TYPES: BibleType[] = [
   {
     id: "noah",

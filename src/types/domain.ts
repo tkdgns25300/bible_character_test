@@ -33,7 +33,7 @@ export interface BibleType {
   code: TypeCode; // internal; never surfaced in copy (no "MBTI")
   character: string;
 
-  // Profile content — authored from source + pastor-reviewed (docs/DATA.md).
+  // Profile content — original copy authored from Scripture (docs/DATA.md).
   // Optional so pre-content stubs are representable.
   title?: string; // e.g. "The Long-view Strategist"
   traits?: string[]; // 3-4 keyword chips
@@ -50,5 +50,4 @@ export interface BibleType {
   accentInk?: string;
   icon?: string; // lucide icon name
   books?: BookRec[];
-  reviewedBy?: string; // e.g. 'pastor-2026-06'; unset = not yet publishable
 }

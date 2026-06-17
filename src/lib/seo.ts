@@ -41,7 +41,7 @@ export function websiteJsonLd() {
     name: SITE_NAME,
     url: SITE_URL,
     description:
-      "A free, pastor-reviewed personality test that maps your story to a character of Scripture.",
+      "A free personality test, rooted in Scripture, that maps your story to a character of the Bible.",
   };
 }
 
