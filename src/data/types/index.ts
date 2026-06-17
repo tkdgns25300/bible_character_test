@@ -158,13 +158,31 @@ export const TYPES: BibleType[] = [
     character: "Jeremiah",
     title: "The Insightful Guardian",
     traits: ["Insightful", "Spiritual", "Empathetic", "Convicted"],
+    summary:
+      "Quiet, deep, and tuned in — you sense what others miss and feel things fully.",
     lines: [
-      "A spiritual bent runs deep in you; prayer, worship, and closeness with God matter most.",
-      "Many like you serve as ministers, pastors, or missionaries.",
-      "You can sit with others in their pain and trials.",
-      "You're sensitive to criticism and conflict.",
-      "You enjoy the inner, spiritual journey.",
-      "Ground your feelings in truth — let your 'inner voice' be checked against what's real.",
+      "You pick up on what people are really feeling, often before they say it.",
+      "Your faith runs deep — prayer and time with God matter more to you than noise.",
+      "You can sit with someone in their pain without rushing to fix it.",
+      "You're drawn to quiet, meaning, and the inner life.",
+      "Criticism and conflict can cut deep — not every hard word is about you.",
+      "Trust your gut, but check it against God's word — feelings make a poor compass on their own.",
+    ],
+    calling:
+      "You're made to see beneath the surface — to notice the hurting, carry their burdens to God, and point people toward him with quiet conviction. It stays healthy when you anchor your inner sense in God's word, not just how you feel.",
+    prayer:
+      "Lord, let me carry people's pain to you — and weigh my heart against your truth instead of trusting it on its own.",
+    verses: [
+      {
+        ref: "Jeremiah 1:5",
+        text: "Before I formed thee in the belly I knew thee; and before thou camest forth out of the womb I sanctified thee, and I ordained thee a prophet unto the nations.",
+        translation: "KJV",
+      },
+      {
+        ref: "Lamentations 3:23",
+        text: "They are new every morning: great is thy faithfulness.",
+        translation: "KJV",
+      },
     ],
     readingRef: "Jeremiah 1",
     bestMatch: "peter",
@@ -178,13 +196,31 @@ export const TYPES: BibleType[] = [
     character: "Barnabas",
     title: "The Loyal Idealist",
     traits: ["Idealistic", "Loyal", "Compassionate", "Just"],
+    summary:
+      "Warm-hearted and loyal — you believe in people and quietly help them become their best.",
     lines: [
-      "You long for closeness with God and can sacrifice for a cause.",
-      "You carry a huge capacity for love and for others.",
-      "You have a sense of justice; kindness and consideration matter to you.",
-      "You're as good at self-care as you are at serving.",
-      "Ministries for truth's sake matter to you; you love to help and move people.",
-      "Many like you serve on church teams, in choirs, or as teachers.",
+      "You see the good in people, even when others have given up on them.",
+      "You're generous with your time, your encouragement, and what you have.",
+      "You care deeply about doing what's right and kind.",
+      "You stick with people through the long haul.",
+      "You feel things deeply — guard your heart so caring for others doesn't drain you dry.",
+      "Your quiet encouragement can change someone's whole story.",
+    ],
+    calling:
+      "You're made to encourage — to believe in people, draw out their gifts, and stand by them when no one else will. That gift goes furthest when your idealism rests on God's grace and you let him refill you as you pour out.",
+    prayer:
+      "Lord, help me see people the way you do — to believe in them and give freely, while letting you renew me as I give.",
+    verses: [
+      {
+        ref: "Acts 11:24",
+        text: "For he was a good man, and full of the Holy Ghost and of faith: and much people was added unto the Lord.",
+        translation: "KJV",
+      },
+      {
+        ref: "1 Thessalonians 5:11",
+        text: "Wherefore comfort yourselves together, and edify one another, even as also ye do.",
+        translation: "KJV",
+      },
     ],
     readingRef: "Acts 9; Acts 15",
     bestMatch: "jonathan",
@@ -198,13 +234,31 @@ export const TYPES: BibleType[] = [
     character: "Jonathan",
     title: "The Affectionate Supporter",
     traits: ["Encouraging", "Warm", "Inspiring", "Devoted"],
+    summary:
+      "Warm and devoted — you draw the best out of people and show up for them.",
     lines: [
-      "You have a natural gift for embracing people and drawing the best out of them.",
-      "You give your time and care, devoting yourself to others.",
-      "Pastoring, teaching, and showing mercy come naturally.",
-      "You're gifted at building relationships.",
-      "You're at your best among people who share your heart.",
-      "You love encouragement — and criticism stings.",
+      "You have a gift for making people feel seen and valued.",
+      "You pour yourself into the people you love — time, care, loyalty.",
+      "Encouraging and mentoring others comes naturally to you.",
+      "You build close, lasting friendships.",
+      "You run on warmth, so criticism stings more than it should — your worth isn't up for a vote.",
+      "Real love sometimes means cheering someone else's rise, even when it costs you.",
+    ],
+    calling:
+      "You're made to build people up — to love loyally, draw out their gifts, and champion them toward God. It shines brightest when you can celebrate others freely, the way Jonathan did, instead of needing the spotlight yourself.",
+    prayer:
+      "Lord, make me a faithful friend — let me love people well, cheer them on, and find my worth in you rather than their approval.",
+    verses: [
+      {
+        ref: "1 Samuel 18:3",
+        text: "Then Jonathan and David made a covenant, because he loved him as his own soul.",
+        translation: "KJV",
+      },
+      {
+        ref: "John 15:13",
+        text: "Greater love hath no man than this, that a man lay down his life for his friends.",
+        translation: "KJV",
+      },
     ],
     readingRef: "1 Samuel 18; 20",
     bestMatch: "barnabas",
@@ -218,12 +272,31 @@ export const TYPES: BibleType[] = [
     character: "Peter",
     title: "The Spirited Inspirer",
     traits: ["Energetic", "Passionate", "Relational", "Expressive"],
+    summary:
+      "Warm, eager, and full of energy — you bring people in and light up the room.",
     lines: [
-      "You're lively, driven, and gifted with people.",
-      "You love expressing faith through song, words, and action.",
-      "You jump in eagerly — let holiness keep pace with your zeal.",
-      "Your kind of energy lifts every room (and every church).",
-      "You're learning to be still and wait on God.",
+      "You're full of energy, and people are drawn to you.",
+      "You love expressing your faith out loud — in words, action, and worship.",
+      "You jump in with both feet, ready to go.",
+      "Your enthusiasm lifts everyone around you.",
+      "You move fast — let your zeal grow into steady faith, not just big feelings.",
+      "Even when you stumble, grace picks you back up — your best days come after God restores you.",
+    ],
+    calling:
+      "You're made to inspire — to love out loud, draw people in, and spark faith with your energy. It matures when your zeal learns to wait on God, and when you let his grace lift you after every stumble, the way it did for Peter.",
+    prayer:
+      "Lord, take my energy and steady it — let me follow you boldly, wait on you patiently, and trust your grace to raise me up when I fall.",
+    verses: [
+      {
+        ref: "1 Peter 1:8",
+        text: "Whom having not seen, ye love; in whom, though now ye see him not, yet believing, ye rejoice with joy unspeakable and full of glory.",
+        translation: "KJV",
+      },
+      {
+        ref: "1 Peter 5:7",
+        text: "Casting all your care upon him; for he careth for you.",
+        translation: "KJV",
+      },
     ],
     readingRef: "Luke 5",
     bestMatch: "jeremiah",
