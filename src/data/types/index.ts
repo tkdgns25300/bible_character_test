@@ -456,13 +456,31 @@ export const TYPES: BibleType[] = [
     character: "Rahab",
     title: "The Quick-witted Analyst",
     traits: ["Sharp", "Practical", "Bold", "Independent"],
+    summary:
+      "Sharp, practical, and bold — you size things up fast and act with nerve.",
     lines: [
-      "You're freer in action than in words; practical and logical.",
-      "Truth about the Creator pulls at you, and you guard your independence.",
-      "You keep your convictions with passion; you often serve in community or youth ministry.",
-      "You rarely just go through the motions at church.",
-      "You're a thinker, fiercely sensitive to right and wrong.",
-      "Reading the word trains and steadies you.",
+      "You read a situation quickly and act — you're better in motion than in long talks.",
+      "You're practical and logical; you want what actually works.",
+      "Once you're convinced, you commit with real courage.",
+      "You don't do things just for show — you mean it, or you don't bother.",
+      "You feel strongly about right and wrong — let God's word sharpen that instinct.",
+      "Bold faith can start anywhere — even an outsider's risky 'yes' can change everything.",
+    ],
+    calling:
+      "You're made to act on conviction — to size up what's true, take brave risks for God, and serve in practical, hands-on ways. It grows deep when you let his word steady your instincts and aim your courage at him.",
+    prayer:
+      "Lord, take my nerve and my eye for what works — make me brave for you, steady me in your word, and let my 'yes' count.",
+    verses: [
+      {
+        ref: "Joshua 2:11",
+        text: "For the LORD your God, he is God in heaven above, and in earth beneath.",
+        translation: "KJV",
+      },
+      {
+        ref: "Proverbs 3:5",
+        text: "Trust in the LORD with all thine heart; and lean not unto thine own understanding.",
+        translation: "KJV",
+      },
     ],
     readingRef: "Joshua 2",
     bestMatch: "deborah",
@@ -476,13 +494,31 @@ export const TYPES: BibleType[] = [
     character: "Adam",
     title: "The Poetic Gardener",
     traits: ["Gentle", "Artistic", "Warm", "Humble"],
+    summary:
+      "Gentle, creative, and warm — you notice beauty and serve in quiet ways.",
     lines: [
-      "You're quiet and deep about spiritual things, serving where no one's watching.",
-      "You can teach friends and family in the things you love.",
-      "You carry a quiet dignity and love the beauty of God's creation.",
-      "You come to God for closeness and comfort; you need shepherds and wise guides.",
-      "Daily prayer and worship come naturally through practice.",
-      "You love hosting and sending notes of encouragement.",
+      "You have a quiet, gentle depth, especially about your faith.",
+      "You see and love beauty — in creation, in art, in small things.",
+      "You serve where no one's watching, without making a fuss.",
+      "You're a warm host who remembers the little kindnesses.",
+      "You can carry things quietly for too long — you need close friends and wise guides.",
+      "Walking close with God in the everyday is where you come alive.",
+    ],
+    calling:
+      "You're made to tend and treasure — to care for people and creation with a gentle, artistic touch, and to walk closely with God in ordinary days. It deepens when you let trusted friends in instead of carrying everything alone.",
+    prayer:
+      "Lord, thank you for beauty and for quiet — let me serve gently, walk close with you each day, and lean on others instead of carrying it all alone.",
+    verses: [
+      {
+        ref: "Genesis 2:15",
+        text: "And the LORD God took the man, and put him into the garden of Eden to dress it and to keep it.",
+        translation: "KJV",
+      },
+      {
+        ref: "Psalm 19:1",
+        text: "The heavens declare the glory of God; and the firmament sheweth his handywork.",
+        translation: "KJV",
+      },
     ],
     readingRef: "Genesis 1–2",
     bestMatch: "david",
@@ -496,13 +532,31 @@ export const TYPES: BibleType[] = [
     character: "Rebekah",
     title: "The Decisive Doer",
     traits: ["Bold", "Charismatic", "Spontaneous", "Decisive"],
+    summary:
+      "Bold and quick to act — you spot the moment and just go for it.",
     lines: [
-      "You're brave and charismatic — and you don't always stop to deliberate.",
-      "You can be impulsive and action-oriented, yet logical.",
-      "You're bold and full of confidence.",
-      "The more you yield to God, the steadier your faith grows.",
-      "You can spark fresh thinking in a group and share your faith well.",
-      "Reading and meditating on the word takes discipline for you.",
+      "You're brave and decisive — when it's time to move, you move.",
+      "You've got charisma and confidence; people follow your energy.",
+      "You'd rather act than overthink it.",
+      "You bring fresh energy and aren't afraid to share your faith.",
+      "Acting first can backfire — slow down enough to let God lead the plan.",
+      "The more you hand the reins to God, the steadier your bold faith gets.",
+    ],
+    calling:
+      "You're made to move — to act with courage, seize the moment, and pull others into the adventure of faith. It steadies and deepens when you let God set the direction and slow down enough to follow his lead.",
+    prayer:
+      "Lord, take my boldness and my drive to act — help me move when you say go, wait when you say wait, and trust you to lead the way.",
+    verses: [
+      {
+        ref: "Genesis 24:58",
+        text: "And they called Rebekah, and said unto her, Wilt thou go with this man? And she said, I will go.",
+        translation: "KJV",
+      },
+      {
+        ref: "Psalm 37:5",
+        text: "Commit thy way unto the LORD; trust also in him; and he shall bring it to pass.",
+        translation: "KJV",
+      },
     ],
     readingRef: "Genesis 24; 27",
     bestMatch: "luke",
@@ -516,13 +570,31 @@ export const TYPES: BibleType[] = [
     character: "Jacob",
     title: "The Natural Performer",
     traits: ["Outgoing", "Warm", "Lively", "Generous"],
+    summary:
+      "Outgoing, warm, and full of life — you light up a room and love people well.",
     lines: [
-      "You're action-oriented, drawn to the outward side of the spiritual life.",
-      "You spot others' needs and love to help; you'd rather give a testimony than a lecture.",
-      "You show your faith by how you live more than what you say.",
-      "Evangelism, generosity, mercy, and empathy come naturally.",
-      "Add a little logic to your feelings to stay steady.",
-      "You have a warm, friend-like love for God — and you love to sing in worship.",
+      "You're warm and outgoing — people feel at home around you.",
+      "You spot what others need and love to jump in and help.",
+      "You'd rather show your faith by living it than lecture about it.",
+      "Generosity, mercy, and a love for worship come naturally.",
+      "Big feelings can run the show — a little steady wisdom keeps you grounded.",
+      "When you hold on to God like Jacob did, you don't let go until he blesses you.",
+    ],
+    calling:
+      "You're made to bring life and warmth — to love people, meet their needs, and show your faith by how you live. It matures when steady wisdom balances your feelings, and when you hold on to God the way Jacob did — refusing to let go until he blesses you.",
+    prayer:
+      "Lord, take my warmth and energy — let me love people well, steady my heart with your wisdom, and hold on to you until you bless me.",
+    verses: [
+      {
+        ref: "Genesis 32:26",
+        text: "And he said, Let me go, for the day breaketh. And he said, I will not let thee go, except thou bless me.",
+        translation: "KJV",
+      },
+      {
+        ref: "Psalm 100:2",
+        text: "Serve the LORD with gladness: come before his presence with singing.",
+        translation: "KJV",
+      },
     ],
     readingRef: "Genesis 27",
     bestMatch: "mary",
