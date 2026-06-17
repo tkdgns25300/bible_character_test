@@ -36,13 +36,31 @@ export const TYPES: BibleType[] = [
     character: "Solomon",
     title: "The Wise Thinker",
     traits: ["Logical", "Scholarly", "Curious", "Truth-seeking"],
+    summary:
+      "Thoughtful and truth-hungry — you're happiest following an idea all the way down to its root.",
     lines: [
-      "You prize logical explanation and solid facts.",
-      "You crave understanding and purpose in what you believe — and can feel lonely in it.",
-      "Teaching and explaining come naturally; you'd make a fine writer or interpreter.",
-      "Justice matters deeply to you.",
-      "Submitting to someone 'above' you can be a struggle.",
-      "You value deep discussion and rich teaching.",
+      "You think for a living — hand you a hard question and you won't rest until it makes sense.",
+      "You trust what's true over what's merely popular, and you can explain it until others finally see it.",
+      "Teaching, writing, untangling a difficult passage — this is where you come alive.",
+      "Justice matters to you; you want things to be not just clever but right.",
+      "Living mostly in your head can get lonely — truth was made to be shared, not only solved.",
+      "Bowing to an authority you could out-argue is hard; you grow when you let God be wiser than you.",
+    ],
+    calling:
+      "You're made to seek wisdom and pass it on — to dig past easy answers, discern what's true, and teach it in a way that sets people free. That gift turns hollow when it only feeds your pride; it turns holy when your knowledge bows to God and is spent in love.",
+    prayer:
+      "Lord, you give wisdom to all who ask — let mine bow to you, and teach me to love people more than being right.",
+    verses: [
+      {
+        ref: "Proverbs 9:10",
+        text: "The fear of the LORD is the beginning of wisdom: and the knowledge of the holy is understanding.",
+        translation: "KJV",
+      },
+      {
+        ref: "Ecclesiastes 12:13",
+        text: "Let us hear the conclusion of the whole matter: Fear God, and keep his commandments: for this is the whole duty of man.",
+        translation: "KJV",
+      },
     ],
     readingRef: "1 Kings 3",
     bestMatch: "paul",
