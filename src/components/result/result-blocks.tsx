@@ -1,8 +1,7 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Check } from "lucide-react";
-import { Card } from "@/components/ui/card";
+import { Check } from "lucide-react";
 import { Avatar } from "@/components/ui/avatar";
 import { ShareButtons } from "@/components/result/share-card";
 import { typeImageSrc } from "@/lib/queries";
@@ -20,7 +19,15 @@ function Placeholder({ children }: { children: ReactNode }) {
   );
 }
 
-export function ResultProfile({ type }: { type: BibleType }) {
+export function ResultProfile({
+  type,
+  best,
+  worst,
+}: {
+  type: BibleType;
+  best?: BibleType;
+  worst?: BibleType;
+}) {
   const accent = type.accent ?? "var(--color-gold)";
   const hasScripture = Boolean(
     type.verses?.length || type.calling || type.prayer,
@@ -30,9 +37,9 @@ export function ResultProfile({ type }: { type: BibleType }) {
       {/* 1 — Identity */}
       <section className="border-b border-line-strong bg-surface">
         <div className={WRAP}>
-          <div className="flex flex-col items-center gap-8 text-center md:flex-row md:items-center md:gap-10 md:text-left">
+          <div className="flex flex-col items-center text-center">
             <div
-              className="flex-none rounded-[28px] p-2.5 shadow-md"
+              className="rounded-[28px] p-2.5 shadow-md"
               style={{ backgroundColor: accent }}
             >
               <div className="overflow-hidden rounded-[20px]">
@@ -42,41 +49,34 @@ export function ResultProfile({ type }: { type: BibleType }) {
                   width={576}
                   height={576}
                   priority
-                  className="h-64 w-64 object-cover sm:h-72 sm:w-72"
+                  className="h-56 w-56 object-cover sm:h-64 sm:w-64"
                 />
               </div>
             </div>
-            <div>
-              <span className="text-sm font-bold uppercase tracking-[0.2em] text-gold-ink">
-                You are
-              </span>
-              <h1 className="mt-2 font-serif text-5xl font-semibold leading-none md:text-6xl">
-                {type.character}
-              </h1>
-              {type.title && (
-                <p className="mt-3 text-xl font-bold text-primary">
-                  {type.title}
-                </p>
-              )}
-              {type.summary && (
-                <p className="mt-4 max-w-md text-[16.5px] leading-relaxed text-ink-soft">
-                  {type.summary}
-                </p>
-              )}
-              {type.traits?.length ? (
-                <div className="mt-5 flex flex-wrap justify-center gap-2 md:justify-start">
-                  {type.traits.map((trait) => (
-                    <span
-                      key={trait}
-                      className="rounded-full bg-surface-2 px-3 py-1 text-sm font-semibold text-ink-soft"
-                    >
-                      {trait}
-                    </span>
-                  ))}
-                </div>
-              ) : null}
-            </div>
+            <h1 className="mt-6 font-serif text-5xl font-semibold leading-none md:text-6xl">
+              {type.character}
+            </h1>
+            {type.title && (
+              <p className="mt-3 text-xl font-bold text-primary">{type.title}</p>
+            )}
+            {type.traits?.length ? (
+              <p className="mt-5 text-xs font-bold uppercase tracking-[0.13em]">
+                {type.traits.map((trait, i) => (
+                  <span key={trait}>
+                    {i > 0 && <span className="mx-2 text-line-strong">·</span>}
+                    <span className="text-ink-soft">{trait}</span>
+                  </span>
+                ))}
+              </p>
+            ) : null}
           </div>
+
+          {(best || worst) && (
+            <div className="mx-auto mt-9 grid max-w-xl gap-3 sm:grid-cols-2">
+              {best && <MatchCard type={best} kind="best" />}
+              {worst && <MatchCard type={worst} kind="worst" />}
+            </div>
+          )}
         </div>
       </section>
 
@@ -162,43 +162,33 @@ export function ResultProfile({ type }: { type: BibleType }) {
 }
 
 function MatchCard({ type, kind }: { type: BibleType; kind: "best" | "worst" }) {
-  const label = kind === "best" ? "Best match" : "Toughest match";
-  const labelClass = kind === "best" ? "text-primary" : "text-gold-ink";
+  const isBest = kind === "best";
+  const label = isBest ? "Clicks with" : "Clashes with";
   return (
-    <Link href={`/types/${type.id}`}>
-      <Card className="flex items-center gap-3.5 p-4 hover:shadow-md">
-        <Avatar
-          src={typeImageSrc(type.id)}
-          alt={type.character}
-          initial={type.character.charAt(0)}
-          accent={type.accent}
-          size={44}
-        />
-        <div className="flex-1">
-          <div className={`text-xs font-bold uppercase tracking-widest ${labelClass}`}>
-            {label}
-          </div>
-          <div className="font-bold">{type.character}</div>
-          {type.title && <div className="text-sm text-ink-faint">{type.title}</div>}
-        </div>
-        <ArrowRight size={18} className="text-ink-faint" />
-      </Card>
+    <Link
+      href={`/types/${type.id}`}
+      className={`flex flex-col items-center gap-2 rounded-2xl border p-5 text-center transition hover:shadow-md ${
+        isBest
+          ? "border-[#cbe6d9] bg-[#eef7f1]"
+          : "border-[#e7d6a8] bg-[#f8f0e2]"
+      }`}
+    >
+      <Avatar
+        src={typeImageSrc(type.id)}
+        alt={type.character}
+        initial={type.character.charAt(0)}
+        accent={type.accent}
+        size={48}
+      />
+      <span
+        className={`text-[11px] font-bold uppercase tracking-[0.14em] ${
+          isBest ? "text-primary" : "text-gold-ink"
+        }`}
+      >
+        {label}
+      </span>
+      <span className="font-bold leading-tight">{type.character}</span>
     </Link>
-  );
-}
-
-export function Matches({ best, worst }: { best?: BibleType; worst?: BibleType }) {
-  if (!best && !worst) return null;
-  return (
-    <section className="border-b border-line-strong bg-surface-2">
-      <div className={WRAP}>
-        <h2 className={LABEL}>Who you click with</h2>
-        <div className="mt-5 grid gap-3.5 sm:grid-cols-2">
-          {best && <MatchCard type={best} kind="best" />}
-          {worst && <MatchCard type={worst} kind="worst" />}
-        </div>
-      </div>
-    </section>
   );
 }
 

@@ -2,11 +2,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { ResultBanner } from "@/components/result/result-banner";
-import {
-  Matches,
-  ResultProfile,
-  ShareSection,
-} from "@/components/result/result-blocks";
+import { ResultProfile, ShareSection } from "@/components/result/result-blocks";
 import { getAllTypes, getTypeById } from "@/lib/queries";
 import { pageMetadata, typeJsonLd } from "@/lib/seo";
 
@@ -52,8 +48,7 @@ export default async function TypePage({
         <ResultBanner />
       </Suspense>
 
-      <ResultProfile type={found} />
-      <Matches best={best} worst={worst} />
+      <ResultProfile type={found} best={best} worst={worst} />
       <ShareSection />
     </main>
   );

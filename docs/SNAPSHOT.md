@@ -13,7 +13,7 @@
 - 문서 + `dev`/`main`(ff-only, 머지 커밋 X)
 - **스캐폴딩**: Next 16 · React 19 · Tailwind v4 · TS strict, App Router/`src/`, build 통과, 16유형 SSG
 - **디자인 토큰**(globals `@theme`, emerald-gold) + 폰트 next/font(Inter+Spectral) + **공유 컴포넌트**(`ui/`·`layout/`, 토큰 핸드롤)
-- **유형(=결과) 페이지 재설계**: 3개 밴드 섹션 — Identity(카드+이름) → What you're like(2열 체크) → In Scripture(구절·기도·은사), 배경 교차 + Best/Toughest match + Share. **코드(ESFJ)·수익화·SAMPLE 제거**
+- **유형(=결과) 페이지**: Identity(중앙 정렬 — 이미지·이름·녹색 타이틀·점구분 캡스 칩, "You are"/요약 제거) → **Best/Toughest를 히어로 바로 아래 분리 컬러 카드**(에메랄드/클레이 틴트, 이모지 없음)로 → What you're like(2열 체크) → In Scripture(구절·기도·소명). 배경 교차 + 하단 Share. **코드(ESFJ)·수익화·SAMPLE 제거**
 - **16유형 콘텐츠 전부 완료**: 매핑(코드·title·traits·readingRef·궁합·accent/icon) + 오리지널 프로필(summary·lines·calling·prayer + KJV 구절 1~2개). IVF는 매핑 참조만, 카피는 전부 오리지널. 개신교 관점(마리아=숭배 아님, "하나님 내 구주"). 모델에 `summary`·`prayer` 추가, `reviewedBy`·giftName 제거. 4개 temperament 배치로 작성
 - **20문항 오리지널 2지선다**(축당 5·홀수, 채점 `lib/scoring` 동작) — 외부 복제 아님
 - **랜딩 = 원페이지 퍼널**: 반응형 헤드라인(`are you?` 강조 줄)·한 줄 카피·`Start the test` 버튼만. 뱃지·reassurance·browse 링크·그리드·트러스트·마감 CTA 전부 제거 → 동작을 "시작" 하나로
@@ -31,7 +31,7 @@
 
 ## 다음 할 일
 
-1. **결과 페이지 공유 UX 개선** — 공유 버튼이 최하단이라 묻힘 → 상단/눈에 띄는 위치로(별도 섹션 대신 통합)
+1. **In Scripture 섹션 디자인 개선** (구절·기도·소명 블록 다듬기)
 2. 이메일 수집·공유 버튼 **실연동**(ConvertKit/Beehiiv) + 분석(Plausible/GA4)·Search Console
 3. 도메인 확정·구매 → Vercel production 연결
 4. `/types` 디렉토리 보강, **Footer를 `/test`에서 숨김**(라우트 그룹)
