@@ -16,13 +16,26 @@ export const TYPES: BibleType[] = [
     character: "Noah",
     title: "The Long-view Strategist",
     traits: ["Analytical", "Independent", "Disciplined", "Visionary"],
+    summary:
+      "Steady and far-sighted — you quietly work toward what others can't picture yet.",
     lines: [
-      "You're built for great faith, devotion, and sacrifice.",
-      "A sense of mission pulls you forward — hard places and long odds don't faze you.",
-      "You have a real gift for reading and interpreting Scripture; teaching and leadership come naturally.",
-      "You're reflective and self-directed — worshiping alongside others keeps you balanced.",
-      "Sometimes you're so independent that people can't follow your reasoning.",
-      "Obeying a clear command feels natural; turning your ideas into a system takes effort.",
+      "You think long-term — while others react to today, you're already planning years ahead.",
+      "When God gives you a clear task, you stick with it — even when it's slow or lonely.",
+      "You think for yourself, so trends and hype don't pull you around.",
+      "You do your best work with a clear plan and quiet space to focus.",
+      "Your ideas run so far ahead that people lose the thread — slow down and bring them along.",
+      "The hard part isn't the vision — it's trusting God's timing while you wait.",
+    ],
+    calling:
+      "You're made to keep the long view — to hear God clearly, commit early, and keep going toward what he's promised. It works best when you let people in and trust God's timing, not just your own plan.",
+    prayer:
+      "Lord, give me patience for the long road — help me build what you've asked, trust your timing over mine, and walk with you even when no one else understands.",
+    verses: [
+      {
+        ref: "Genesis 6:22",
+        text: "Thus did Noah; according to all that God commanded him, so did he.",
+        translation: "KJV",
+      },
     ],
     readingRef: "Genesis 6",
     bestMatch: "esther",
@@ -74,13 +87,31 @@ export const TYPES: BibleType[] = [
     character: "Paul",
     title: "The Driven Visionary",
     traits: ["Driven", "Commanding", "Strategic", "Bold"],
+    summary:
+      "Bold and focused — you spot a goal worth chasing and bring people with you.",
     lines: [
-      "You have a strong drive to lead.",
-      "You're learning to lead with gentleness and humility, under God's love.",
-      "You're learning to live under others' authority too.",
-      "Logic and feeling are finding their balance in you.",
-      "Teaching, preaching, and exhortation come naturally.",
-      "You're a known communicator and explainer of the word.",
+      "You're a natural leader — you see where to go and get people moving.",
+      "You set big goals and have the drive to actually reach them.",
+      "You make hard truth clear — teaching and persuading come easily.",
+      "You'd rather hear it straight than be flattered.",
+      "That drive can run people over — real strength stays gentle, not just loud.",
+      "Once you start, you finish — you mean to run the whole race.",
+    ],
+    calling:
+      "You're made to lead and build — to set a vision, gather people, and push God's work forward with everything you've got. It becomes a blessing when your drive bows to Christ, your strength stays gentle, and you let yourself be led too.",
+    prayer:
+      "Lord, take my drive and point it at you — make me bold for the gospel, gentle with people, and ready to follow even while I lead.",
+    verses: [
+      {
+        ref: "Philippians 3:14",
+        text: "I press toward the mark for the prize of the high calling of God in Christ Jesus.",
+        translation: "KJV",
+      },
+      {
+        ref: "Philippians 4:13",
+        text: "I can do all things through Christ which strengtheneth me.",
+        translation: "KJV",
+      },
     ],
     readingRef: "Acts 20",
     bestMatch: "solomon",
@@ -92,15 +123,28 @@ export const TYPES: BibleType[] = [
     id: "esther",
     code: "ENTP",
     character: "Esther",
-    title: "The Wise Visionary",
+    title: "The Daring Advocate",
     traits: ["Inventive", "Witty", "Versatile", "Persuasive"],
+    summary:
+      "Quick, persuasive, and brave when it counts — you find the right words at the right moment.",
     lines: [
-      "You're a natural storyteller who blends the world and the word with ease.",
-      "You've got humor and an entertaining streak.",
-      "You can teach and persuade with a gift for words.",
-      "Music or art is a good outlet for your time alone.",
-      "You're an explainer of truth and doctrine, with a prophetic edge.",
-      "When you open up too far too fast, stay anchored in truth.",
+      "You think on your feet and win people over with words.",
+      "You read the moment and act when it matters — even when it's risky.",
+      "You're adaptable and inventive — you find a way through where others see a wall.",
+      "Your wit and warmth draw people in and open doors.",
+      "Cleverness can outrun conviction — let truth anchor you, not just a good argument.",
+      "Your bravest moments come when standing up for someone costs you something.",
+    ],
+    calling:
+      "You're made to speak up and step in — to use your wit, courage, and way with words to stand up for others at just the right moment. It turns holy when it's about helping people rather than winning, and stays rooted in God's truth instead of your own cleverness.",
+    prayer:
+      "Lord, give me courage for the moment you've placed me in — let me use my words for others, not just to win, and keep my boldness rooted in your truth.",
+    verses: [
+      {
+        ref: "Esther 4:14",
+        text: "For if thou altogether holdest thy peace at this time, then shall there enlargement and deliverance arise to the Jews from another place; but thou and thy father's house shall be destroyed: and who knoweth whether thou art come to the kingdom for such a time as this?",
+        translation: "KJV",
+      },
     ],
     readingRef: "Esther 4",
     bestMatch: "noah",
