@@ -113,38 +113,42 @@ export function ResultProfile({
           )}
 
           {hasScripture ? (
-            <div className="mt-7 flex flex-col gap-8">
+            <div className="mt-7 flex flex-col gap-6">
               {type.verses?.length ? (
                 <div>
                   <div className={SUBLABEL}>Verses for you</div>
-                  <div className="mt-3 flex flex-col gap-5 border-l-[3px] border-primary pl-5">
+                  <div className="mt-4 flex flex-col gap-6">
                     {type.verses.map((v) => (
-                      <div key={v.ref}>
-                        <p className="font-serif text-xl italic leading-relaxed text-ink">
+                      <figure key={v.ref}>
+                        <blockquote className="font-serif text-xl leading-relaxed text-ink">
                           “{v.text}”
-                        </p>
-                        <div className="mt-2 text-sm font-semibold text-ink-soft">
+                        </blockquote>
+                        <figcaption className="mt-2 text-sm font-semibold text-ink-soft">
                           {v.ref}
-                        </div>
-                      </div>
+                        </figcaption>
+                      </figure>
                     ))}
                   </div>
                 </div>
               ) : null}
 
               {type.prayer ? (
-                <div>
-                  <div className={SUBLABEL}>How you might pray</div>
-                  <p className="mt-3 border-l-[3px] border-primary pl-5 font-serif text-xl italic leading-relaxed text-ink">
-                    “{type.prayer}”
+                <div className="rounded-2xl border border-[#cbe6d9] bg-[#eef7f1] p-5 md:p-6">
+                  <div className="text-xs font-bold uppercase tracking-wider text-primary">
+                    A prayer for you
+                  </div>
+                  <p className="mt-2.5 font-serif text-lg italic leading-relaxed text-ink">
+                    {type.prayer}
                   </p>
                 </div>
               ) : null}
 
               {type.calling ? (
-                <div>
-                  <div className={SUBLABEL}>Your gift</div>
-                  <p className="mt-3 text-[16px] leading-relaxed text-ink">
+                <div className="rounded-2xl border border-[#e7d6a8] bg-[#f8f0e2] p-5 md:p-6">
+                  <div className="text-xs font-bold uppercase tracking-wider text-gold-ink">
+                    Your gift
+                  </div>
+                  <p className="mt-2.5 text-[16px] leading-relaxed text-[#5e4a28]">
                     {type.calling}
                   </p>
                 </div>
