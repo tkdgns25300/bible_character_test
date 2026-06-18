@@ -49,7 +49,7 @@ export default async function TypePage({
       </Suspense>
 
       <ResultProfile type={found} best={best} worst={worst} />
-      <ShareSection />
+      <ShareSection type={found} />
     </main>
   );
 }

@@ -69,6 +69,12 @@ export function ResultProfile({
                 ))}
               </p>
             ) : null}
+            <div className="mt-6 flex items-center justify-center gap-3">
+              <span className="text-xs font-bold uppercase tracking-[0.12em] text-ink-faint">
+                Share
+              </span>
+              <ShareButtons type={type} compact />
+            </div>
           </div>
 
           {(best || worst) && (
@@ -196,18 +202,29 @@ function MatchCard({ type, kind }: { type: BibleType; kind: "best" | "worst" }) 
   );
 }
 
-export function ShareSection() {
+export function ShareSection({ type }: { type: BibleType }) {
   return (
     <section className="mx-auto w-full max-w-[800px] px-5 pb-14 pt-10 md:px-8">
-      <div className="flex flex-col items-center gap-4">
-        <ShareButtons />
-        <p className="text-sm text-ink-soft">
-          Haven&apos;t taken the test yet?{" "}
-          <Link href="/test" className="font-semibold text-primary hover:underline">
-            Start the free test →
-          </Link>
+      <div
+        className="mx-auto max-w-xl rounded-3xl border border-[#cbe6d9] px-6 py-8 text-center"
+        style={{ background: "linear-gradient(180deg, #ffffff, #e7f4ee)" }}
+      >
+        <h2 className="font-serif text-2xl font-semibold md:text-[26px]">
+          Which one are your friends?
+        </h2>
+        <p className="mt-1.5 text-[15px] text-ink-soft">
+          Share your result and find out.
         </p>
+        <div className="mt-6">
+          <ShareButtons type={type} />
+        </div>
       </div>
+      <p className="mt-6 text-center text-sm text-ink-soft">
+        Haven&apos;t taken the test yet?{" "}
+        <Link href="/test" className="font-semibold text-primary hover:underline">
+          Start the free test →
+        </Link>
+      </p>
     </section>
   );
 }
