@@ -3,7 +3,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "About",
   description:
-    "What Bible Character Test is, and where its 16 character mappings come from.",
+    "What Bible Character Test is, and how its 16 character profiles are written.",
   path: "/about",
 });
 
@@ -18,17 +18,10 @@ export default function AboutPage() {
           type&apos;s strengths, calling, and suggested verses.
         </p>
         <p>
-          The 16 character mappings are based on the Bible personality material
-          published by IVF Korea, available at{" "}
-          <a
-            href="https://ivf.or.kr/mbti/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-medium text-primary hover:underline"
-          >
-            ivf.or.kr/mbti
-          </a>
-          .
+          Each type is paired with a figure of Scripture whose story echoes it,
+          then written fresh from the Bible. The descriptions, callings, and
+          prayers are our own; the verses are quoted from the public-domain King
+          James Version.
         </p>
         <p>
           It&apos;s meant for reflection and encouragement, not a verdict on

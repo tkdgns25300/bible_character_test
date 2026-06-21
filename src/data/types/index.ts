@@ -1,8 +1,9 @@
 import type { BibleType } from "@/types/domain";
 
 // 16 personality-code -> Bible character mapping + profiles.
-// Mapping derived from IVF 한국기독학생회 (code<->character, readingRef) as reference;
-// all surfaced copy (summary/lines/calling/prayer) is original (docs/DATA.md).
+// Mapping reflects common associations between personality and figures of
+// Scripture; all surfaced copy (summary/lines/calling/prayer) is original and
+// verses are public-domain KJV (docs/DATA.md).
 // bestMatch/worstMatch follow the standard MBTI compatibility chart pattern:
 //   best  = duality pair (flip E/I and J/P, keep middle two)  — mutual
 //   worst = conflict pair (per the chart's NF·NT ↔ SP·SJ red blocks) — mutual
