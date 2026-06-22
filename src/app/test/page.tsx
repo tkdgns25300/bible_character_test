@@ -54,10 +54,6 @@ export default function TestPage() {
           ))}
         </div>
       </Card>
-
-      <p className="mt-4 text-center text-sm text-ink-faint">
-        No ads, no tricks — just {QUESTIONS.length} honest questions.
-      </p>
     </main>
   );
 }

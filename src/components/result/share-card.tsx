@@ -184,10 +184,10 @@ export function ShareButtons({
   };
   const ring =
     "grid place-items-center rounded-full text-white shadow-sm transition-transform hover:scale-105";
-  const dim = compact ? "h-9 w-9" : "h-12 w-12";
+  const dim = compact ? "h-9 w-9" : "h-11 w-11";
   const gs = compact ? 16 : 20;
   return (
-    <div className={`flex items-center justify-center ${compact ? "gap-2.5" : "gap-4"}`}>
+    <div className={`flex flex-wrap items-center justify-center ${compact ? "gap-2.5" : "gap-3"}`}>
       <button
         aria-label="Share to Instagram"
         onClick={shareImage}
