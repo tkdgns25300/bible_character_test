@@ -37,13 +37,14 @@ export async function GET(
         style={{
           width: "100%",
           height: "100%",
+          position: "relative",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
           background: accent,
           color: "#ffffff",
-          padding: 90,
+          padding: 72,
           fontFamily: "sans-serif",
         }}
       >
@@ -51,49 +52,55 @@ export async function GET(
           <div
             style={{
               display: "flex",
-              padding: 16,
-              borderRadius: 48,
+              padding: 18,
+              borderRadius: 56,
               background: "rgba(255,255,255,0.2)",
             }}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={avatarSrc}
-              width={320}
-              height={320}
+              width={460}
+              height={460}
               alt=""
-              style={{ borderRadius: 32 }}
+              style={{ borderRadius: 44 }}
             />
           </div>
         ) : null}
-        <div style={{ display: "flex", fontSize: 120, fontWeight: 700, marginTop: 44, lineHeight: 1 }}>
+        <div style={{ display: "flex", fontSize: 116, fontWeight: 700, marginTop: 34, lineHeight: 1 }}>
           {found?.character ?? "Unknown"}
         </div>
         {found?.title ? (
-          <div style={{ display: "flex", fontSize: 48, fontWeight: 700, marginTop: 22 }}>
+          <div style={{ display: "flex", fontSize: 48, fontWeight: 700, marginTop: 20 }}>
             {found.title}
           </div>
         ) : null}
         {traits ? (
-          <div
-            style={{
-              display: "flex",
-              fontSize: 27,
-              fontWeight: 700,
-              letterSpacing: 4,
-              marginTop: 26,
-              color: "rgba(255,255,255,0.82)",
-            }}
-          >
-            {traits}
+          <div style={{ display: "flex", justifyContent: "center", marginTop: 22, maxWidth: 880 }}>
+            <span
+              style={{
+                fontSize: 27,
+                fontWeight: 700,
+                letterSpacing: 4,
+                color: "rgba(255,255,255,0.82)",
+                textAlign: "center",
+                lineHeight: 1.4,
+              }}
+            >
+              {traits}
+            </span>
           </div>
         ) : null}
         <div
           style={{
+            position: "absolute",
+            bottom: 64,
+            left: 0,
+            right: 0,
             display: "flex",
-            fontSize: 32,
+            justifyContent: "center",
+            fontSize: 34,
             fontWeight: 600,
-            marginTop: 56,
             color: "rgba(255,255,255,0.92)",
           }}
         >
