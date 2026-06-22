@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Check, Compass } from "lucide-react";
+import { SITE_HOST } from "@/lib/seo";
 import type { BibleType } from "@/types/domain";
 
 // First-class share surface (on-page preview). The OG image route reuses this
@@ -54,7 +55,7 @@ function ShareCard({ type, format }: { type: BibleType; format: "square" | "stor
               {keyTrait}
             </span>
           )}
-          <div className="mt-3 text-xs text-white/70">biblecharactertest.com</div>
+          <div className="mt-3 text-xs text-white/70">{SITE_HOST}</div>
         </div>
       </div>
     </div>

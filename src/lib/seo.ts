@@ -3,7 +3,9 @@ import type { BibleType } from "@/types/domain";
 
 export const SITE_NAME = "Bible Character Test";
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://biblecharactertest.com";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://biblecharactertest.life";
+// Bare host for display (e.g., on share cards) — derived so it tracks SITE_URL.
+export const SITE_HOST = SITE_URL.replace(/^https?:\/\//, "").replace(/\/$/, "");
 
 // Per-page metadata helper. The root layout adds the "· SITE_NAME" title suffix
 // via its title template, so `title` here stays bare.

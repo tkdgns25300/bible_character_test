@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 import { BrandMark } from "@/components/ui/brand-mark";
-import { SITE_NAME } from "@/lib/seo";
+import { SITE_HOST, SITE_NAME } from "@/lib/seo";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
@@ -38,7 +38,7 @@ export default function Image() {
           </span>
         </div>
         <span style={{ fontSize: 26, color: "rgba(255,255,255,0.7)" }}>
-          biblecharactertest.com
+          {SITE_HOST}
         </span>
       </div>
     ),
