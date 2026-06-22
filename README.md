@@ -59,12 +59,12 @@ Buy Me a Coffee·POD 스토어 링크는 비밀이 아니므로 `src/constants/`
 
 | 항목 | 값 |
 |---|---|
-| 도메인 | **미정** (후보: biblepersonality.com 등 — PROJECT.md §12) |
+| 도메인 | **biblecharactertest.life** (hosting.kr 구매 · Vercel 연결 중 · non-www 대표) |
 | 시장 / 언어 | 영어권, 사이트 카피 영어 |
-| GitHub repo | `tkdgns25300/bible_character_test` (생성됨, 커밋 0 · default `main`) |
-| Vercel | **미연결** (production = `main`) |
+| GitHub repo | `tkdgns25300/bible_character_test` (default `main` · Vercel 자동배포 연결) |
+| Vercel | **연결됨** — GitHub push 시 자동배포 (production = `main`) |
 | DB / Auth | 없음 (파일 기반 정적 사이트) |
-| 이메일 | 수집 ConvertKit/Beehiiv · 발송 Resend (미연동) |
+| 수익화 | 추천 도서 어필리에이트(Amazon Associates) 우선 · 광고 Phase 2 · 이메일 수집 보류 |
 
 ## Git
 
