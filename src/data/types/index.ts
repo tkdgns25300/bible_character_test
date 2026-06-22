@@ -449,6 +449,27 @@ export const TYPES: BibleType[] = [
     worstMatch: "esther",
     accent: "#b8895a",
     icon: "music",
+    books: [
+      {
+        title: "A Shepherd Looks at Psalm 23",
+        author: "Phillip Keller",
+        note: "The shepherd's heart of Psalm 23 — a fitting read for your type.",
+        amazonUrl:
+          "https://www.amazon.com/s?k=A+Shepherd+Looks+at+Psalm+23+Phillip+Keller",
+      },
+      {
+        title: "A Tale of Three Kings",
+        author: "Gene Edwards",
+        amazonUrl:
+          "https://www.amazon.com/s?k=A+Tale+of+Three+Kings+Gene+Edwards",
+      },
+      {
+        title: "Spiritual Leadership",
+        author: "J. Oswald Sanders",
+        amazonUrl:
+          "https://www.amazon.com/s?k=Spiritual+Leadership+J+Oswald+Sanders",
+      },
+    ],
   },
   {
     id: "rahab",

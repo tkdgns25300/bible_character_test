@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { ResultBanner } from "@/components/result/result-banner";
 import { ResultProfile, ShareSection } from "@/components/result/result-blocks";
+import { BookModule } from "@/components/monetize/modules";
 import { getAllTypes, getTypeById } from "@/lib/queries";
 import { pageMetadata, typeJsonLd } from "@/lib/seo";
 
@@ -49,6 +50,11 @@ export default async function TypePage({
       </Suspense>
 
       <ResultProfile type={found} best={best} worst={worst} />
+      {found.books?.length ? (
+        <section className="mx-auto w-full max-w-[800px] px-5 pt-2 md:px-8">
+          <BookModule type={found} />
+        </section>
+      ) : null}
       <ShareSection type={found} />
     </main>
   );

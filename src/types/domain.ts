@@ -26,6 +26,8 @@ export interface BookRec {
   title: string;
   author: string;
   amazonUrl: string;
+  note?: string; // short "why this fits your type" line (used on the featured pick)
+  coverImage?: string; // /public path to a cover thumbnail (optional; falls back to a title placeholder)
 }
 
 export interface BibleType {
