@@ -24,4 +24,4 @@ export const BUY_ME_A_COFFEE_URL = "#"; // TODO: real Buy Me a Coffee link
 export const BMC_COLOR = { bg: "#ffdd00", fg: "#1a1a1a" } as const;
 
 // Amazon Associates tag — appended to book links once approved (empty = no tag yet).
-export const AMAZON_TAG = "";
+export const AMAZON_TAG = "biblecharacte-20";

@@ -3,7 +3,7 @@
 > 페이지는 [`SPEC.md`](./SPEC.md), 데이터·채점은 [`DATA.md`](./DATA.md), 환경은 [`../README.md`](../README.md). 상위 사업 전략·수익 단계·리스크는 `~/Desktop/bible-personality-test-PROJECT.md`.
 > 브랜치: `main`(배포·default) / `dev`(작업). commit·push·merge는 사용자 명시 시에만. merge 커밋 X (fast-forward).
 
-## 현재 상태 (2026-06-22)
+## 현재 상태 (2026-06-23)
 
 - ✅ 컨셉·수익 전략·결과 구조 결정 (PROJECT.md)
 - ✅ 스캐폴딩·디자인·핵심 플로우·SEO/바이럴 표면 완료 (SNAPSHOT 참조)
@@ -11,8 +11,9 @@
 - ✅ **20문항 정리 완료** (generic·일반 표현, 균형·중복 정리)
 - ✅ **결과 페이지 마무리** (히어로·궁합·In Scripture·Newsreader·공유·도서 블록·favicon)
 - ✅ **Vercel 자동배포 연결** + 도메인 `biblecharactertest.life` 연결 중(DNS 등록·non-www)
-- ⏳ Amazon Associates 미가입(태그) / 분석 미연동 / 이메일 보류
-- **다음**: 도메인 초록불 → Amazon Associates 가입·태그 → 16유형 도서 채우기 → 출시
+- ✅ **Amazon Associates 가입·태그 발급(`biblecharacte-20`)** + 16유형 도서 입력 / ⏳ 세금정보(W-8BEN) 미완료 / 분석 미연동 / 이메일 보류
+- **다음**: Amazon **세금정보(W-8BEN) 완료**(현재 `Incomplete` → 미완 시 30% 원천징수) → 출시
+- ⚠️ **추후 재작업(placeholder)**: **도서 선정 + 도서 블록 디자인 전면 새로 할 예정.** 지금 16유형에 들어간 책·노출 UI는 임시이며, 추후 큐레이션·디자인을 새로 결정한다.
 
 ## Phase 0 — 검증 + 셋업 (빌드 전)
 
@@ -48,7 +49,7 @@
 - [x] **유형별 오리지널 콘텐츠**(summary·lines·calling·prayer + KJV 구절) — **16/16 완료**
 - [x] 번역본 표준 = **KJV** 확정
 - [x] 질문지(20문항) — generic·일반 표현으로 정리 완료
-- [ ] Amazon 도서 큐레이션 — 유형별 2권 **목록 확보**(다윗만 데이터 입력, 태그 발급 후 16유형 입력)
+- [x] Amazon 도서 큐레이션 — **16유형 2권씩 입력 완료**(태그 `biblecharacte-20`). ⚠️ **단 선정·노출 디자인은 임시(placeholder) → 추후 전면 재작업 예정**
 
 ### 1-3. 페이지
 - [ ] `/` 랜딩 (훅 + CTA + SEO)
@@ -60,7 +61,7 @@
 ### 1-4. 수익·런칭 (출시 Day 0)
 - [ ] 이메일 수집 폼 + ConvertKit/Beehiiv (발송은 Resend)
 - [ ] 공유 버튼 + 유형별 동적 OG 이미지
-- [ ] Amazon 링크 — **블록 구현 완료**(`BookModule`, Top-pick+표지), `AMAZON_TAG`만 입력하면 활성 · POD 링크
+- [x] Amazon 링크 — 블록 구현 + `AMAZON_TAG`(`biblecharacte-20`) 입력 **완료·활성**. ⚠️ **(추후) 도서 선정·블록 디자인 재작업** · POD 링크 별도
 - [ ] **Buy Me a Coffee**: 실제 계정·정산(한국 PayPal 등) 셋업 → `BUY_ME_A_COFFEE_URL` 교체(현재 `#` 플레이스홀더). 후원 버튼을 결과 페이지뿐 아니라 **전 페이지에서 접근 가능**하게 노출(헤더/플로팅 위젯 등 위치 결정)
 - [ ] sitemap·robots · 분석(Plausible/GA4) · Search Console
 
