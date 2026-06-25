@@ -44,16 +44,11 @@ export const TYPES: BibleType[] = [
     icon: "ship",
     books: [
       {
-        title: "A Long Obedience in the Same Direction",
-        author: "Eugene Peterson",
-        note: "Faithful, long-haul obedience — for your long-view heart.",
-        amazonUrl:
-          "https://www.amazon.com/s?k=A+Long+Obedience+in+the+Same+Direction+Eugene+Peterson",
-      },
-      {
-        title: "Future Grace",
-        author: "John Piper",
-        amazonUrl: "https://www.amazon.com/s?k=Future+Grace+John+Piper",
+        title: "The Purpose Driven Life",
+        author: "Rick Warren",
+        note: "Big-picture purpose for a long-view mind.",
+        amazonUrl: "https://www.amazon.com/dp/031033750X",
+        coverImage: "/images/books/noah.webp",
       },
     ],
   },
@@ -96,15 +91,11 @@ export const TYPES: BibleType[] = [
     icon: "gem",
     books: [
       {
-        title: "Living Life Backward",
-        author: "David Gibson",
-        note: "Ecclesiastes' hard-won wisdom for a thinker.",
-        amazonUrl: "https://www.amazon.com/s?k=Living+Life+Backward+David+Gibson",
-      },
-      {
-        title: "The Pursuit of God",
-        author: "A.W. Tozer",
-        amazonUrl: "https://www.amazon.com/s?k=The+Pursuit+of+God+Tozer",
+        title: "Mere Christianity",
+        author: "C.S. Lewis",
+        note: "Faith that holds up to a curious mind.",
+        amazonUrl: "https://www.amazon.com/dp/0060652926",
+        coverImage: "/images/books/solomon.jpg",
       },
     ],
   },
@@ -147,15 +138,11 @@ export const TYPES: BibleType[] = [
     icon: "megaphone",
     books: [
       {
-        title: "Paul: A Biography",
-        author: "N.T. Wright",
-        note: "The driven apostle, up close.",
-        amazonUrl: "https://www.amazon.com/s?k=Paul+A+Biography+N+T+Wright",
-      },
-      {
-        title: "The Prodigal God",
-        author: "Tim Keller",
-        amazonUrl: "https://www.amazon.com/s?k=The+Prodigal+God+Tim+Keller",
+        title: "Chase the Lion",
+        author: "Mark Batterson",
+        note: "Chase the God-sized vision.",
+        amazonUrl: "https://www.amazon.com/dp/1601428871",
+        coverImage: "/images/books/paul.jpg",
       },
     ],
   },
@@ -193,15 +180,11 @@ export const TYPES: BibleType[] = [
     icon: "crown",
     books: [
       {
-        title: "Esther & Ruth",
-        author: "Iain Duguid",
-        note: "Courage and providence — for such a time as this.",
-        amazonUrl: "https://www.amazon.com/s?k=Esther+and+Ruth+Iain+Duguid",
-      },
-      {
-        title: "Esther (commentary)",
-        author: "Karen Jobes",
-        amazonUrl: "https://www.amazon.com/s?k=Esther+Karen+Jobes+commentary",
+        title: "The Screwtape Letters",
+        author: "C.S. Lewis",
+        note: "Sharp, witty — faith with a clever edge.",
+        amazonUrl: "https://www.amazon.com/dp/0060652934",
+        coverImage: "/images/books/esther.jpg",
       },
     ],
   },
@@ -244,16 +227,11 @@ export const TYPES: BibleType[] = [
     icon: "eye",
     books: [
       {
-        title: "Run with the Horses",
-        author: "Eugene Peterson",
-        note: "Conviction and calling, even when it's costly.",
-        amazonUrl:
-          "https://www.amazon.com/s?k=Run+with+the+Horses+Eugene+Peterson",
-      },
-      {
-        title: "A Praying Life",
-        author: "Paul Miller",
-        amazonUrl: "https://www.amazon.com/s?k=A+Praying+Life+Paul+Miller",
+        title: "New Morning Mercies",
+        author: "Paul David Tripp",
+        note: "Daily depth for a soul that feels deeply.",
+        amazonUrl: "https://www.amazon.com/dp/1433592304",
+        coverImage: "/images/books/jeremiah.jpg",
       },
     ],
   },
@@ -296,17 +274,11 @@ export const TYPES: BibleType[] = [
     icon: "heart-handshake",
     books: [
       {
-        title: "The Gift of Being Yourself",
-        author: "David Benner",
-        note: "Knowing yourself so you can lift others.",
-        amazonUrl:
-          "https://www.amazon.com/s?k=The+Gift+of+Being+Yourself+David+Benner",
-      },
-      {
-        title: "Encouragement: The Key to Caring",
-        author: "Larry Crabb & Dan Allender",
-        amazonUrl:
-          "https://www.amazon.com/s?k=Encouragement+The+Key+to+Caring+Crabb+Allender",
+        title: "Love Does",
+        author: "Bob Goff",
+        note: "Turn big ideals into love that acts.",
+        amazonUrl: "https://www.amazon.com/dp/1400203759",
+        coverImage: "/images/books/barnabas.jpg",
       },
     ],
   },
@@ -349,15 +321,11 @@ export const TYPES: BibleType[] = [
     icon: "users",
     books: [
       {
-        title: "Made for Friendship",
-        author: "Drew Hunter",
-        note: "Loyal, life-giving friendship.",
-        amazonUrl: "https://www.amazon.com/s?k=Made+for+Friendship+Drew+Hunter",
-      },
-      {
-        title: "The Four Loves",
-        author: "C.S. Lewis",
-        amazonUrl: "https://www.amazon.com/s?k=The+Four+Loves+C+S+Lewis",
+        title: "The 5 Love Languages",
+        author: "Gary Chapman",
+        note: "Love your people even better.",
+        amazonUrl: "https://www.amazon.com/dp/080241270X",
+        coverImage: "/images/books/jonathan.jpg",
       },
     ],
   },
@@ -400,16 +368,11 @@ export const TYPES: BibleType[] = [
     icon: "sparkles",
     books: [
       {
-        title: "The Ragamuffin Gospel",
-        author: "Brennan Manning",
-        note: "Grace that keeps restoring the eager heart.",
-        amazonUrl:
-          "https://www.amazon.com/s?k=The+Ragamuffin+Gospel+Brennan+Manning",
-      },
-      {
         title: "Crazy Love",
         author: "Francis Chan",
-        amazonUrl: "https://www.amazon.com/s?k=Crazy+Love+Francis+Chan",
+        note: "Fuel for a heart that loves out loud.",
+        amazonUrl: "https://www.amazon.com/dp/1434705943",
+        coverImage: "/images/books/peter.jpg",
       },
     ],
   },
@@ -452,17 +415,11 @@ export const TYPES: BibleType[] = [
     icon: "clipboard-list",
     books: [
       {
-        title: "Spiritual Disciplines for the Christian Life",
-        author: "Donald Whitney",
-        note: "Steady, faithful practice over the long run.",
-        amazonUrl:
-          "https://www.amazon.com/s?k=Spiritual+Disciplines+for+the+Christian+Life+Donald+Whitney",
-      },
-      {
-        title: "Ordering Your Private World",
-        author: "Gordon MacDonald",
-        amazonUrl:
-          "https://www.amazon.com/s?k=Ordering+Your+Private+World+Gordon+MacDonald",
+        title: "The Bible Recap",
+        author: "Tara-Leigh Cobble",
+        note: "A steady, orderly way through the Bible.",
+        amazonUrl: "https://www.amazon.com/dp/0764237039",
+        coverImage: "/images/books/luke.jpg",
       },
     ],
   },
@@ -505,15 +462,11 @@ export const TYPES: BibleType[] = [
     icon: "hand-heart",
     books: [
       {
-        title: "Humility",
-        author: "Andrew Murray",
-        note: "The humble, willing heart God uses.",
-        amazonUrl: "https://www.amazon.com/s?k=Humility+Andrew+Murray",
-      },
-      {
-        title: "Calm My Anxious Heart",
-        author: "Linda Dillow",
-        amazonUrl: "https://www.amazon.com/s?k=Calm+My+Anxious+Heart+Linda+Dillow",
+        title: "Jesus Calling",
+        author: "Sarah Young",
+        note: "A gentle daily word for a faithful heart.",
+        amazonUrl: "https://www.amazon.com/dp/1400215293",
+        coverImage: "/images/books/mary.jpg",
       },
     ],
   },
@@ -556,15 +509,11 @@ export const TYPES: BibleType[] = [
     icon: "scale",
     books: [
       {
-        title: "Lead Like Jesus",
+        title: "Lead Like Jesus Revisited",
         author: "Ken Blanchard",
-        note: "Leading with strength and humility.",
-        amazonUrl: "https://www.amazon.com/s?k=Lead+Like+Jesus+Ken+Blanchard",
-      },
-      {
-        title: "Generous Justice",
-        author: "Tim Keller",
-        amazonUrl: "https://www.amazon.com/s?k=Generous+Justice+Tim+Keller",
+        note: "Lead with strength and a servant's heart.",
+        amazonUrl: "https://www.amazon.com/dp/0718077253",
+        coverImage: "/images/books/deborah.jpg",
       },
     ],
   },
@@ -602,22 +551,10 @@ export const TYPES: BibleType[] = [
     books: [
       {
         title: "A Shepherd Looks at Psalm 23",
-        author: "Phillip Keller",
-        note: "The shepherd's heart of Psalm 23 — a fitting read for your type.",
-        amazonUrl:
-          "https://www.amazon.com/s?k=A+Shepherd+Looks+at+Psalm+23+Phillip+Keller",
-      },
-      {
-        title: "A Tale of Three Kings",
-        author: "Gene Edwards",
-        amazonUrl:
-          "https://www.amazon.com/s?k=A+Tale+of+Three+Kings+Gene+Edwards",
-      },
-      {
-        title: "Spiritual Leadership",
-        author: "J. Oswald Sanders",
-        amazonUrl:
-          "https://www.amazon.com/s?k=Spiritual+Leadership+J+Oswald+Sanders",
+        author: "W. Phillip Keller",
+        note: "The shepherd's heart, for one who cares.",
+        amazonUrl: "https://www.amazon.com/dp/0310274419",
+        coverImage: "/images/books/david.jpg",
       },
     ],
   },
@@ -662,14 +599,9 @@ export const TYPES: BibleType[] = [
       {
         title: "The Hiding Place",
         author: "Corrie ten Boom",
-        note: "Bold, practical faith under pressure.",
-        amazonUrl: "https://www.amazon.com/s?k=The+Hiding+Place+Corrie+ten+Boom",
-      },
-      {
-        title: "What's So Amazing About Grace?",
-        author: "Philip Yancey",
-        amazonUrl:
-          "https://www.amazon.com/s?k=Whats+So+Amazing+About+Grace+Philip+Yancey",
+        note: "A gripping true story of bold faith.",
+        amazonUrl: "https://www.amazon.com/dp/0800794052",
+        coverImage: "/images/books/rahab.jpg",
       },
     ],
   },
@@ -714,14 +646,9 @@ export const TYPES: BibleType[] = [
       {
         title: "Gentle and Lowly",
         author: "Dane Ortlund",
-        note: "Walking close with a gentle Savior.",
-        amazonUrl: "https://www.amazon.com/s?k=Gentle+and+Lowly+Dane+Ortlund",
-      },
-      {
-        title: "Liturgy of the Ordinary",
-        author: "Tish Harrison Warren",
-        amazonUrl:
-          "https://www.amazon.com/s?k=Liturgy+of+the+Ordinary+Tish+Harrison+Warren",
+        note: "The tender heart of Jesus, for a gentle soul.",
+        amazonUrl: "https://www.amazon.com/dp/1433566133",
+        coverImage: "/images/books/adam.jpg",
       },
     ],
   },
@@ -766,13 +693,9 @@ export const TYPES: BibleType[] = [
       {
         title: "Just Do Something",
         author: "Kevin DeYoung",
-        note: "Decisive faith that follows God's lead.",
-        amazonUrl: "https://www.amazon.com/s?k=Just+Do+Something+Kevin+DeYoung",
-      },
-      {
-        title: "Trusting God",
-        author: "Jerry Bridges",
-        amazonUrl: "https://www.amazon.com/s?k=Trusting+God+Jerry+Bridges",
+        note: "Stop overthinking — faith for a doer.",
+        amazonUrl: "https://www.amazon.com/dp/0802411592",
+        coverImage: "/images/books/rebekah.jpg",
       },
     ],
   },
@@ -815,16 +738,11 @@ export const TYPES: BibleType[] = [
     icon: "party-popper",
     books: [
       {
-        title: "Prayer: Experiencing Awe and Intimacy with God",
-        author: "Tim Keller",
-        note: "Wrestling with God until he blesses you.",
-        amazonUrl:
-          "https://www.amazon.com/s?k=Prayer+Tim+Keller+Experiencing+Awe",
-      },
-      {
-        title: "Knowing God",
-        author: "J.I. Packer",
-        amazonUrl: "https://www.amazon.com/s?k=Knowing+God+J+I+Packer",
+        title: "Everybody, Always",
+        author: "Bob Goff",
+        note: "Joyful, big-hearted love for people.",
+        amazonUrl: "https://www.amazon.com/dp/0718078136",
+        coverImage: "/images/books/jacob.jpg",
       },
     ],
   },

@@ -72,7 +72,7 @@ export function BookModule({ type }: { type: BibleType }) {
   if (!books.length) return null;
   const [top, ...rest] = books;
   const label = type.title
-    ? `Books for the ${type.title.replace(/^The /, "")}`
+    ? `A pick for the ${type.title.replace(/^The /, "")}`
     : "Recommended reading";
   return (
     <Card className="p-5">
