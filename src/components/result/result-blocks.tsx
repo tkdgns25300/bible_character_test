@@ -19,22 +19,21 @@ function Placeholder({ children }: { children: ReactNode }) {
   );
 }
 
-export function ResultProfile({
+export function ResultIdentity({
   type,
   best,
   worst,
+  afterMatches,
 }: {
   type: BibleType;
   best?: BibleType;
   worst?: BibleType;
+  afterMatches?: ReactNode;
 }) {
   const accent = type.accent ?? "var(--color-gold)";
-  const hasScripture = Boolean(
-    type.verses?.length || type.calling || type.prayer,
-  );
   return (
     <>
-      {/* 1 — Identity */}
+      {/* Identity */}
       <section className="border-b border-line-strong bg-surface">
         <div className={WRAP}>
           <div className="flex flex-col items-center text-center">
@@ -83,10 +82,20 @@ export function ResultProfile({
               {worst && <MatchCard type={worst} kind="worst" />}
             </div>
           )}
+          {afterMatches}
         </div>
       </section>
+    </>
+  );
+}
 
-      {/* 2 — What you're like */}
+export function ResultBody({ type }: { type: BibleType }) {
+  const hasScripture = Boolean(
+    type.verses?.length || type.calling || type.prayer,
+  );
+  return (
+    <>
+      {/* What you're like */}
       {type.lines?.length ? (
         <section className="border-b border-line-strong bg-surface-2">
           <div className={WRAP}>
@@ -173,7 +182,7 @@ export function ResultProfile({
 
 function MatchCard({ type, kind }: { type: BibleType; kind: "best" | "worst" }) {
   const isBest = kind === "best";
-  const label = isBest ? "Clicks with" : "Clashes with";
+  const label = isBest ? "Best match" : "Toughest match";
   return (
     <Link
       href={`/types/${type.id}`}
@@ -204,7 +213,10 @@ function MatchCard({ type, kind }: { type: BibleType; kind: "best" | "worst" }) 
 
 export function ShareSection({ type }: { type: BibleType }) {
   return (
-    <section className="mx-auto w-full max-w-[800px] px-5 pb-14 pt-10 md:px-8">
+    <section
+      id="share-section"
+      className="mx-auto w-full max-w-[800px] px-5 pb-14 pt-10 md:px-8"
+    >
       <div
         className="mx-auto max-w-xl rounded-3xl border border-[#cbe6d9] px-6 py-8 text-center"
         style={{ background: "linear-gradient(180deg, #ffffff, #e7f4ee)" }}

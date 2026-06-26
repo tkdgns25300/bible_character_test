@@ -2,8 +2,13 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { ResultBanner } from "@/components/result/result-banner";
-import { ResultProfile, ShareSection } from "@/components/result/result-blocks";
-import { BookModule } from "@/components/monetize/modules";
+import {
+  ResultIdentity,
+  ResultBody,
+  ShareSection,
+} from "@/components/result/result-blocks";
+import { BookStrip } from "@/components/monetize/modules";
+import { BookStickyBar } from "@/components/monetize/book-sticky-bar";
 import { getAllTypes, getTypeById } from "@/lib/queries";
 import { pageMetadata, typeJsonLd } from "@/lib/seo";
 
@@ -49,12 +54,24 @@ export default async function TypePage({
         <ResultBanner />
       </Suspense>
 
-      <ResultProfile type={found} best={best} worst={worst} />
+      <ResultIdentity
+        type={found}
+        best={best}
+        worst={worst}
+        afterMatches={
+          found.books?.length ? (
+            <BookStrip type={found} id="book-pick" />
+          ) : null
+        }
+      />
       {found.books?.length ? (
-        <section className="mx-auto w-full max-w-[800px] px-5 pt-2 md:px-8">
-          <BookModule type={found} />
-        </section>
+        <BookStickyBar
+          book={found.books[0]}
+          watchId="book-pick"
+          hideId="share-section"
+        />
       ) : null}
+      <ResultBody type={found} />
       <ShareSection type={found} />
     </main>
   );

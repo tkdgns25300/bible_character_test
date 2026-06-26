@@ -67,66 +67,36 @@ function ModuleCard({
   );
 }
 
-export function BookModule({ type }: { type: BibleType }) {
+export function BookStrip({ type, id }: { type: BibleType; id?: string }) {
   const books = type.books ?? [];
   if (!books.length) return null;
-  const [top, ...rest] = books;
-  const label = type.title
-    ? `A pick for the ${type.title.replace(/^The /, "")}`
-    : "Recommended reading";
+  const top = books[0];
   return (
-    <Card className="p-5">
-      <div className="text-xs font-bold uppercase tracking-wider text-ink-faint">
-        {label}
-      </div>
-
-      {/* Top pick */}
+    <div id={id} className="mx-auto mt-6 max-w-xl">
       <a
         href={bookHref(top.amazonUrl)}
         target="_blank"
         rel="noopener noreferrer sponsored"
-        className="mt-4 flex items-center gap-4"
+        className="flex items-center gap-3 rounded-2xl border border-line bg-surface px-4 py-3 transition hover:shadow-md"
       >
-        <Cover book={top} idx={0} className="h-[120px] w-[80px] text-[11px]" />
-        <div className="min-w-0">
-          <div className="font-serif text-lg font-semibold leading-tight">
+        <Cover book={top} idx={0} className="h-[52px] w-[35px] text-[7px]" />
+        <div className="min-w-0 text-left">
+          <div className="text-[10px] font-bold uppercase tracking-wider text-gold-ink">
+            Read next
+          </div>
+          <div className="truncate font-serif text-[15px] font-semibold leading-tight">
             {top.title}
           </div>
-          <div className="text-sm text-ink-faint">{top.author}</div>
-          {top.note ? (
-            <p className="mt-2 text-sm leading-snug text-ink-soft">{top.note}</p>
-          ) : null}
-          <span className="mt-3 inline-flex h-9 items-center gap-1.5 rounded-btn bg-primary px-4 text-xs font-bold text-white">
-            View on Amazon <ExternalLink size={13} />
-          </span>
+          <div className="truncate text-xs text-ink-faint">{top.author}</div>
         </div>
+        <span className="ml-auto inline-flex h-9 flex-none items-center gap-1.5 rounded-btn bg-primary px-4 text-xs font-bold text-white">
+          View <ExternalLink size={13} />
+        </span>
       </a>
-
-      {/* The rest, compact */}
-      {rest.length ? (
-        <div className="mt-4 flex flex-wrap gap-x-6 gap-y-3 border-t border-line pt-4">
-          {rest.map((book, i) => (
-            <a
-              key={book.title}
-              href={bookHref(book.amazonUrl)}
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="flex min-w-[150px] flex-1 items-center gap-2.5"
-            >
-              <Cover book={book} idx={i + 1} className="h-[54px] w-[36px] text-[7px]" />
-              <span className="text-[13px] font-semibold leading-tight">
-                {book.title}{" "}
-                <ExternalLink size={11} className="inline text-ink-faint" />
-              </span>
-            </a>
-          ))}
-        </div>
-      ) : null}
-
-      <p className="mt-3.5 text-[11px] text-ink-faint">
+      <p className="mt-2 text-center text-[10px] text-ink-faint">
         As an Amazon Associate we earn from qualifying purchases.
       </p>
-    </Card>
+    </div>
   );
 }
 
