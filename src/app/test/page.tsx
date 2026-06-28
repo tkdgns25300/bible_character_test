@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -25,11 +26,17 @@ export default function TestPage() {
     }
   }
 
+  function back() {
+    if (index === 0) return;
+    setSelected(selected.slice(0, -1));
+    setIndex(index - 1);
+  }
+
   return (
     <main className="mx-auto flex w-full max-w-[680px] flex-col px-5 py-10 md:px-8">
       <div className="flex items-center gap-3">
         <Progress value={index} max={QUESTIONS.length} />
-        <span className="min-w-[44px] text-right text-sm font-semibold tabular-nums text-ink-faint">
+        <span className="flex-none whitespace-nowrap text-sm font-semibold tabular-nums text-ink-faint">
           {index + 1} / {QUESTIONS.length}
         </span>
       </div>
@@ -54,6 +61,15 @@ export default function TestPage() {
           ))}
         </div>
       </Card>
+
+      {index > 0 && (
+        <button
+          onClick={back}
+          className="mx-auto mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-ink-faint transition-colors hover:text-ink"
+        >
+          <ArrowLeft size={16} /> Back
+        </button>
+      )}
     </main>
   );
 }
