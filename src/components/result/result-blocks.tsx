@@ -59,11 +59,11 @@ export function ResultIdentity({
               <p className="mt-3 text-xl font-bold text-primary">{type.title}</p>
             )}
             {type.traits?.length ? (
-              <p className="mt-5 text-xs font-bold uppercase tracking-[0.13em]">
+              <p className="mt-5 text-balance text-xs font-bold uppercase tracking-[0.13em] text-ink-soft">
                 {type.traits.map((trait, i) => (
                   <span key={trait}>
-                    {i > 0 && <span className="mx-2 text-line-strong">·</span>}
-                    <span className="text-ink-soft">{trait}</span>
+                    {i > 0 && <span className="text-line-strong"> · </span>}
+                    {trait}
                   </span>
                 ))}
               </p>
