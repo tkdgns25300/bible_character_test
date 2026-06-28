@@ -2,13 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { ExternalLink, X } from "lucide-react";
-import { AMAZON_TAG } from "@/constants";
+import { affiliateUrl, bookCoverSrc } from "@/lib/amazon";
 import type { BookRec } from "@/types/domain";
-
-function bookHref(url: string) {
-  if (!AMAZON_TAG) return url;
-  return `${url}${url.includes("?") ? "&" : "?"}tag=${AMAZON_TAG}`;
-}
 
 /**
  * Slim, dismissible reminder bar for the featured book. Shows whenever the
@@ -58,17 +53,20 @@ export function BookStickyBar({
 
   if (dismissed || !visible) return null;
 
+  const cover = bookCoverSrc(book.amazonUrl);
+
   return (
     <div
       className="fixed inset-x-0 bottom-0 z-40 border-t border-line-strong bg-surface/95 shadow-[0_-6px_20px_-12px_rgba(0,0,0,0.3)] backdrop-blur"
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
     >
       <div className="mx-auto flex max-w-[820px] items-center gap-3.5 px-4 py-3.5 md:gap-4 md:px-8">
-        {book.coverImage ? (
+        {cover ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            src={book.coverImage}
+            src={cover}
             alt=""
+            loading="lazy"
             className="h-16 w-11 flex-none rounded-[4px] object-cover shadow-md"
           />
         ) : null}
@@ -84,7 +82,7 @@ export function BookStickyBar({
           </div>
         </div>
         <a
-          href={bookHref(book.amazonUrl)}
+          href={affiliateUrl(book.amazonUrl)}
           target="_blank"
           rel="noopener noreferrer sponsored"
           className="inline-flex h-11 flex-none items-center gap-2 rounded-btn bg-primary px-5 text-sm font-bold text-white"

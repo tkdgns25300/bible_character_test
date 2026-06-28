@@ -1,15 +1,11 @@
 import type { ReactNode } from "react";
 import { Coffee, ExternalLink, Heart, Shirt } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import { AMAZON_TAG, BMC_COLOR, BUY_ME_A_COFFEE_URL } from "@/constants";
+import { BMC_COLOR, BUY_ME_A_COFFEE_URL } from "@/constants";
+import { affiliateUrl, bookCoverSrc } from "@/lib/amazon";
 import type { BibleType, BookRec } from "@/types/domain";
 
 const COVER_BG = ["#3a6b55", "#7a5a2e", "#324a6b", "#6b3a4f"];
-
-function bookHref(url: string) {
-  if (!AMAZON_TAG) return url;
-  return `${url}${url.includes("?") ? "&" : "?"}tag=${AMAZON_TAG}`;
-}
 
 function Cover({
   book,
@@ -20,12 +16,14 @@ function Cover({
   idx: number;
   className: string;
 }) {
-  if (book.coverImage) {
+  const src = bookCoverSrc(book.amazonUrl);
+  if (src) {
     // eslint-disable-next-line @next/next/no-img-element
     return (
       <img
-        src={book.coverImage}
+        src={src}
         alt={book.title}
+        loading="lazy"
         className={`flex-none rounded-[4px] object-cover shadow-md ${className}`}
       />
     );
@@ -74,7 +72,7 @@ export function BookStrip({ type, id }: { type: BibleType; id?: string }) {
   return (
     <div id={id} className="mx-auto mt-6 max-w-xl">
       <a
-        href={bookHref(top.amazonUrl)}
+        href={affiliateUrl(top.amazonUrl)}
         target="_blank"
         rel="noopener noreferrer sponsored"
         className="flex items-center gap-3 rounded-2xl border border-line bg-surface px-4 py-3 transition hover:shadow-md"
