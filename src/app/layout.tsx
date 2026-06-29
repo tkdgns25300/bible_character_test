@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Newsreader } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
+import { SiteFooter } from "@/components/layout/site-footer";
 import { SITE_NAME, SITE_URL } from "@/lib/seo";
 import "./globals.css";
 
@@ -29,7 +29,7 @@ export default function RootLayout({
       <body className="bg-bg text-ink font-sans flex min-h-full flex-col antialiased">
         <Header />
         <div className="flex-1">{children}</div>
-        <Footer />
+        <SiteFooter />
         <Analytics />
       </body>
     </html>
