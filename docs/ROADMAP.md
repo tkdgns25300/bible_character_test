@@ -11,9 +11,11 @@
 - ✅ **20문항 정리 완료** (generic·일반 표현, 균형·중복 정리)
 - ✅ **결과 페이지 마무리** (히어로·궁합·In Scripture·Newsreader·공유·도서 블록·favicon)
 - ✅ **Vercel 자동배포 연결** + 도메인 `biblecharactertest.life` **연결 완료·라이브**(non-www)
-- ✅ **Amazon Associates 가입·태그(`biblecharacte-20`)·세금(W-8BEN 0%) 완료** + 16유형 **단일 베스트셀러**(Amazon CDN 표지[ASIN 핫링크, 자체호스팅 제거]·`/dp/ASIN` 직접링크, 16권 검증) / ⏳ 도서 블록 위치·디자인 조정 중 / 분석 미연동 / 이메일 보류
+- ✅ **Amazon Associates 가입·태그(`biblecharacte-20`)·세금(W-8BEN 0%) 완료** + 16유형 **단일 베스트셀러**(Amazon CDN 표지[ASIN 핫링크, 자체호스팅 제거]·`/dp/ASIN` 직접링크, 16권 검증) / ⏳ 도서 블록 위치·디자인 조정 중 / 이메일 보류
 - ✅ **`/test` 플로 검수**(Back 버튼·카운터 모바일 픽스) · **about/privacy 검수**(인디 수준 법적 OK)
-- **다음**: **측정**(분석 Plausible·Search Console) → **배급**(Pinterest·Reddit 등). 도서 블록 디자인은 병행 조정.
+- ✅ **측정·색인 셋업**: Vercel Web Analytics(쿠키리스·Hobby 무료, Enable) + Google Search Console 도메인 소유권 인증(TXT) + sitemap 제출(상태는 크롤 후 자동 "성공")
+- ✅ **정리**: 데드코드(`ShareCard`/`ShareCardPreview`) 제거 · Footer를 `/test`에서 숨김(`SiteFooter`)
+- **다음**: **배급(distribution)** — 결과/공유이미지를 Pinterest·Reddit·인스타 등에 시딩(코드 아닌 마케팅). 도서 블록 디자인은 병행 조정.
 - ✅ **도서 선정 확정**(유형당 대중 베스트셀러 1권·Amazon CDN 표지·직접링크). ⏳ **노출 디자인 진행 중**: 라벨 Best/Toughest, 매치 밑 'Read next' 스트립(시안2)+스크롤 슬림 바 적용 — 계속 조정.
 
 ## Phase 0 — 검증 + 셋업 (빌드 전)
@@ -64,7 +66,7 @@
 - [x] 공유 버튼(X·FB·IG/Save·복사) + 유형별 동적 OG·정사각 공유 이미지
 - [x] Amazon 링크 — `BookStrip`(매치 밑 'Read next' 스트립) + `BookStickyBar`(스크롤 슬림 바) + `AMAZON_TAG` **활성** + 표지=Amazon CDN. ⏳ 위치/디자인 조정 중 · POD 링크 별도
 - [x] sitemap·robots
-- [ ] **측정** ← 다음: 분석(**Plausible 권장 — 쿠키리스라 동의 배너 불필요** / GA4는 쿠키→EU 배너 필요) + **Google Search Console 등록·sitemap 제출**
+- [x] **측정·색인** — Vercel Web Analytics(쿠키리스·무료) + Google Search Console 인증·sitemap 제출
 - [ ] (보류) 이메일 수집 폼 + ConvertKit/Beehiiv
 - [ ] (낮음) Buy Me a Coffee 실제 계정·정산(한국 PayPal) → `BUY_ME_A_COFFEE_URL` 교체(현재 `#`)
 
