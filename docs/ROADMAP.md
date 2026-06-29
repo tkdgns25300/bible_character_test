@@ -15,7 +15,7 @@
 - ✅ **`/test` 플로 검수**(Back 버튼·카운터 모바일 픽스) · **about/privacy 검수**(인디 수준 법적 OK)
 - ✅ **측정·색인 셋업**: Vercel Web Analytics(쿠키리스·Hobby 무료, Enable) + Google Search Console 도메인 소유권 인증(TXT) + sitemap 제출(상태는 크롤 후 자동 "성공")
 - ✅ **정리**: 데드코드(`ShareCard`/`ShareCardPreview`) 제거 · Footer를 `/test`에서 숨김(`SiteFooter`)
-- **다음**: **배급(distribution)** — 결과/공유이미지를 Pinterest·Reddit·인스타 등에 시딩(코드 아닌 마케팅). 도서 블록 디자인은 병행 조정.
+- **다음**: **배급 = 메타(FB/IG) 유료 광고**(오가닉 시딩 아님). 선행 = **Meta Pixel 설치**(전환 추적·최적화) + 타겟(추천 US)·목표(테스트완료) 결정 + 쿠키 동의 배너 판단(US면 회피).
 - ✅ **도서 선정 확정**(유형당 대중 베스트셀러 1권·Amazon CDN 표지·직접링크). ⏳ **노출 디자인 진행 중**: 라벨 Best/Toughest, 매치 밑 'Read next' 스트립(시안2)+스크롤 슬림 바 적용 — 계속 조정.
 
 ## Phase 0 — 검증 + 셋업 (빌드 전)
@@ -67,6 +67,7 @@
 - [x] Amazon 링크 — `BookStrip`(매치 밑 'Read next' 스트립) + `BookStickyBar`(스크롤 슬림 바) + `AMAZON_TAG` **활성** + 표지=Amazon CDN. ⏳ 위치/디자인 조정 중 · POD 링크 별도
 - [x] sitemap·robots
 - [x] **측정·색인** — Vercel Web Analytics(쿠키리스·무료) + Google Search Console 인증·sitemap 제출
+- [ ] **배급 = 메타 광고** ← 다음: Meta Pixel(`NEXT_PUBLIC_META_PIXEL_ID` + StartTest/CompleteTest/Share 이벤트) · 메타 비즈니스/페이지/도메인 인증 · 캠페인(타겟·목표·소재) · (픽셀=쿠키 → 동의 배너 판단)
 - [ ] (보류) 이메일 수집 폼 + ConvertKit/Beehiiv
 - [ ] (낮음) Buy Me a Coffee 실제 계정·정산(한국 PayPal) → `BUY_ME_A_COFFEE_URL` 교체(현재 `#`)
 

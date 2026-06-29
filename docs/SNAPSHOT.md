@@ -6,7 +6,7 @@
 
 - 작성: 2026-06-29
 - 브랜치: `main`·`dev` origin 동기화
-- 단계: **Phase 1 거의 완료 — 콘텐츠·디자인·테스트 플로·Vercel 배포·도메인·수익화(도서 어필리에이트) 라이브.** 도서 표지=Amazon CDN(ASIN 핫링크, 자체호스팅 제거). about/privacy 검수 완료(인디 수준 법적 OK). **남은 핵심은 측정(분석·Search Console) → 배급.** 분석·이메일 미연동.
+- 단계: **Phase 1 완료 — 제품·배포·도메인·수익화(도서 어필리에이트)·측정(Vercel Analytics·Search Console·sitemap) 라이브.** 코드로 만들 건 사실상 끝. **다음 = 배급 = 메타(FB/IG) 유료 광고** → 그 전제로 **Meta Pixel 설치가 선행 과제.**
 
 ## 지금까지 한 일
 
@@ -34,17 +34,22 @@
 - **16유형 매핑 = 자체 편집**(보편 연상 기반). 프로필·질문·구절 전부 자체(오리지널 + 공개도메인 KJV). **IVF 자료 사용은 거절됨(2026-06) → 독립으로 확정**, 협업 창구(`dal_mate@ivf.or.kr`)만 선택지로 열림.
 - 프리미티브 토큰 핸드롤(shadcn은 복잡 프리미티브만). 데이터=코드 SSG·DB 없음. 폰트 **Inter+Newsreader**(세리프 Spectral에서 변경). **팔레트=에메랄드-골드**(인디고에서 변경). **성경 번역=KJV**(공개도메인, 단일 표준 — 화면엔 버전 배지 미표시).
 - 인물 일러스트 **도입 완료**(16명, `next/image` 서빙). 경로는 `queries.ts`의 `typeImageSrc(id)`로 파생(도메인 타입에 `imageUrl` 미추가). OG는 Satori가 래스터 원형 클립 미지원이라 **accent 둥근 사각 프레임**으로.
-- **인프라/수익 결정**: 배포=**Vercel(GitHub 자동배포)**, 도메인=**`biblecharactertest.life`(non-www 대표)**. 수익화=**추천 도서 어필리에이트(Amazon Associates) 우선** + 자체 PDF(중기); **광고는 도메인·트래픽 후 Phase 2**; **이메일 수집 현재 보류**; Buy Me a Coffee는 한국 정산 마찰로 우선순위 낮음.
+- **인프라/수익 결정**: 배포=**Vercel(GitHub 자동배포)**, 도메인=**`biblecharactertest.life`(non-www 대표)**. 수익화=**추천 도서 어필리에이트(Amazon Associates) 우선** + 자체 PDF(중기); **이메일 수집 현재 보류**; Buy Me a Coffee는 한국 정산 마찰로 우선순위 낮음.
+- **측정 라이브**: Vercel Web Analytics(쿠키리스·Hobby 무료, Enable) + Google Search Console 도메인 인증(TXT)·sitemap 제출(크롤 후 상태 자동 전환). favicon `.svg/.png`.
+- **배급 = 메타 유료 광고로 확정**(오가닉 시딩 아님). 타겟/목표/배너 결정 대기 — 아래.
 
-## 다음 할 일
+## 다음 할 일 — 메타 광고 준비
 
-1. **측정·색인** — 분석(**Plausible 권장: 쿠키리스 → 동의 배너 불필요**; GA4는 쿠키→EU 배너 필요) + **Google Search Console 등록·sitemap 제출**.
-2. **배급(distribution)** — 결과/공유이미지를 Pinterest·Reddit·인스타 등에 시딩(코드 아닌 마케팅).
-3. (정리·짧음) 데드코드 `ShareCard`/`ShareCardPreview` 제거 · **Footer를 `/test`에서 숨김**(라우트 그룹) · 도서 슬림 바 모바일 체크.
-4. (선택) 도서 블록 위치/디자인 마무리 · 이메일 수집(보류) · 공유 스토리 9:16 · favicon `.ico` · `/types` 보강.
+**네가 할 일(계정/설정):** ① Meta Business 계정 ② FB 페이지(+IG 연결) ③ 광고계정·결제수단 ④ **Meta Pixel 생성 → Pixel ID 확보**(병목) ⑤ 도메인 인증(이벤트 매니저, TXT/메타태그) ⑥ 결정값 = **타겟 국가·광고 목표**.
 
-## 열린 질문
+**내가 할 일(코드, Pixel ID 나오면/골격 먼저 가능):** Pixel 설치(`layout.tsx`, env `NEXT_PUBLIC_META_PIXEL_ID`) + 이벤트(StartTest=`/test` 진입, **CompleteTest**=결과 도달[광고 최적화 목표], Share=공유클릭, 선택 AffiliateClick) + Privacy에 Meta 픽셀/쿠키 명시. (Conversions API는 후순위)
 
-- 이메일 수집 도입 시점(현재 보류) / 자체 PDF 상품 제작 여부
-- **분석 켤 때 쿠키 동의** — Plausible(쿠키리스)이면 배너 불필요 / GA4면 EU 배너 필요(정책은 이미 "동의 받겠다" 약속).
-- **디자인** — 결과·`/test`·about/privacy 검수 완료. **도서 블록 위치/디자인만 조정 중.**
+**잔여(선택):** 도서 블록 위치/디자인 마무리 · 공유 스토리 9:16 · `/types` 보강 · 이메일 수집(보류).
+
+## 열린 질문 (메타 광고 결정 대기)
+
+- **타겟 국가** — 추천 **US 중심**(영어권+기독교, EU 빼면 쿠키 동의 배너 회피). EU 포함 시 동의 배너 필수.
+- **광고 목표** — 추천 **"테스트 완료" 전환 최적화**(단순 트래픽보다 질↑).
+- **쿠키 동의 배너** — **메타 픽셀=쿠키** → 픽셀 켜면 "쿠키리스라 배너 불필요"가 깨짐. US 타겟이면 회피 가능 / EU면 배너 필요.
+- **메타 광고 정책** — 종교=민감 카테고리라 관심사 직접 타게팅 제한 → MBTI/성격테스트/퀴즈 관심사 + 광범위 타겟으로 우회, 소재는 가볍게.
+- 이메일 수집 도입 시점 / 자체 PDF 상품 여부.
